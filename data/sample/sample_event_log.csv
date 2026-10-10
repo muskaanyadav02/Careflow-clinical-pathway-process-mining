@@ -1,0 +1,677 @@
+Case_ID,Activity_Name,Timestamp
+P001,Patient Registration,2026-10-01 09:55:00
+P001,Triage,2026-10-01 10:08:00
+P001,Doctor Consultation,2026-10-01 11:25:00
+P001,Lab Test,2026-10-01 11:52:00
+P001,Repeat Lab Test,2026-10-01 12:39:00
+P001,Lab Results Review,2026-10-01 12:51:00
+P001,Doctor Consultation,2026-10-01 13:19:00
+P001,Treatment,2026-10-01 13:43:00
+P001,Discharge,2026-10-01 14:04:00
+P002,Patient Registration,2026-10-01 08:32:00
+P002,Triage,2026-10-01 08:43:00
+P002,Doctor Consultation,2026-10-01 09:15:00
+P002,Lab Test,2026-10-01 09:43:00
+P002,Lab Results Review,2026-10-01 09:53:00
+P002,Treatment,2026-10-01 10:13:00
+P002,Discharge,2026-10-01 10:40:00
+P003,Patient Registration,2026-10-01 15:15:00
+P003,Triage,2026-10-01 15:28:00
+P003,Doctor Consultation,2026-10-01 17:11:00
+P003,Lab Test,2026-10-01 17:32:00
+P003,Lab Results Review,2026-10-01 17:58:00
+P003,Treatment,2026-10-01 18:37:00
+P003,Discharge,2026-10-01 18:59:00
+P004,Patient Registration,2026-10-01 10:11:00
+P004,Triage,2026-10-01 10:18:00
+P004,Doctor Consultation,2026-10-01 10:54:00
+P004,Lab Test,2026-10-01 11:15:00
+P004,Lab Results Review,2026-10-01 11:29:00
+P004,Doctor Consultation,2026-10-01 11:58:00
+P004,Treatment,2026-10-01 12:26:00
+P004,Discharge,2026-10-01 12:33:00
+P005,Patient Registration,2026-10-01 11:59:00
+P005,Triage,2026-10-01 12:16:00
+P005,Doctor Consultation,2026-10-01 12:46:00
+P005,Treatment,2026-10-01 13:06:00
+P005,Discharge,2026-10-01 13:22:00
+P006,Patient Registration,2026-10-01 14:05:00
+P006,Triage,2026-10-01 14:18:00
+P006,Doctor Consultation,2026-10-01 14:49:00
+P006,Lab Test,2026-10-01 15:04:00
+P006,Lab Results Review,2026-10-01 15:29:00
+P006,Doctor Consultation,2026-10-01 16:08:00
+P006,Treatment,2026-10-01 16:35:00
+P006,Discharge,2026-10-01 17:00:00
+P007,Patient Registration,2026-10-01 17:32:00
+P007,Triage,2026-10-01 17:47:00
+P007,Doctor Consultation,2026-10-01 18:21:00
+P007,Lab Test,2026-10-01 18:56:00
+P007,Lab Results Review,2026-10-01 19:23:00
+P007,Doctor Consultation,2026-10-01 20:36:00
+P007,Treatment,2026-10-01 21:06:00
+P007,Discharge,2026-10-01 21:17:00
+P008,Patient Registration,2026-10-01 16:35:00
+P008,Triage,2026-10-01 16:54:00
+P008,Doctor Consultation,2026-10-01 18:11:00
+P008,Lab Test,2026-10-01 18:29:00
+P008,Lab Results Review,2026-10-01 19:06:00
+P008,Treatment,2026-10-01 19:41:00
+P008,Discharge,2026-10-01 19:57:00
+P009,Patient Registration,2026-10-01 11:46:00
+P009,Triage,2026-10-01 12:06:00
+P009,Doctor Consultation,2026-10-01 13:12:00
+P009,Treatment,2026-10-01 13:31:00
+P009,Discharge,2026-10-01 13:56:00
+P010,Patient Registration,2026-10-01 10:47:00
+P010,Triage,2026-10-01 10:54:00
+P010,Doctor Consultation,2026-10-01 11:23:00
+P010,Treatment,2026-10-01 12:06:00
+P010,Discharge,2026-10-01 12:19:00
+P011,Patient Registration,2026-10-01 17:27:00
+P011,Triage,2026-10-01 17:35:00
+P011,Doctor Consultation,2026-10-01 18:02:00
+P011,Treatment,2026-10-01 18:33:00
+P011,Discharge,2026-10-01 18:41:00
+P012,Patient Registration,2026-10-01 13:04:00
+P012,Triage,2026-10-01 13:14:00
+P012,Doctor Consultation,2026-10-01 13:54:00
+P012,Lab Test,2026-10-01 14:20:00
+P012,Lab Results Review,2026-10-01 15:02:00
+P012,Treatment,2026-10-01 15:31:00
+P012,Discharge,2026-10-01 15:56:00
+P013,Patient Registration,2026-10-01 16:44:00
+P013,Triage,2026-10-01 16:55:00
+P013,Doctor Consultation,2026-10-01 18:15:00
+P013,Lab Test,2026-10-01 18:41:00
+P013,Lab Results Review,2026-10-01 19:11:00
+P013,Treatment,2026-10-01 19:28:00
+P013,Discharge,2026-10-01 19:44:00
+P014,Patient Registration,2026-10-01 13:16:00
+P014,Triage,2026-10-01 13:22:00
+P014,Doctor Consultation,2026-10-01 15:34:00
+P014,Treatment,2026-10-01 15:49:00
+P014,Discharge,2026-10-01 16:17:00
+P015,Patient Registration,2026-10-01 16:18:00
+P015,Triage,2026-10-01 16:27:00
+P015,Doctor Consultation,2026-10-01 18:27:00
+P015,Treatment,2026-10-01 18:47:00
+P015,Discharge,2026-10-01 19:00:00
+P016,Patient Registration,2026-10-01 17:05:00
+P016,Triage,2026-10-01 17:23:00
+P016,Doctor Consultation,2026-10-01 18:02:00
+P016,Lab Test,2026-10-01 18:18:00
+P016,Lab Results Review,2026-10-01 18:53:00
+P016,Treatment,2026-10-01 19:26:00
+P016,Discharge,2026-10-01 19:45:00
+P017,Patient Registration,2026-10-01 16:53:00
+P017,Triage,2026-10-01 17:01:00
+P017,Doctor Consultation,2026-10-01 18:09:00
+P017,Lab Test,2026-10-01 18:26:00
+P017,Lab Results Review,2026-10-01 18:36:00
+P017,Doctor Consultation,2026-10-01 19:31:00
+P017,Treatment,2026-10-01 19:44:00
+P017,Discharge,2026-10-01 19:56:00
+P018,Patient Registration,2026-10-01 09:10:00
+P018,Triage,2026-10-01 09:25:00
+P018,Doctor Consultation,2026-10-01 10:55:00
+P018,Lab Test,2026-10-01 11:22:00
+P018,Lab Results Review,2026-10-01 12:02:00
+P018,Doctor Consultation,2026-10-01 12:47:00
+P018,Treatment,2026-10-01 13:23:00
+P018,Discharge,2026-10-01 13:34:00
+P019,Patient Registration,2026-10-01 09:37:00
+P019,Triage,2026-10-01 09:55:00
+P019,Doctor Consultation,2026-10-01 10:18:00
+P019,Lab Test,2026-10-01 10:49:00
+P019,Lab Results Review,2026-10-01 11:05:00
+P019,Doctor Consultation,2026-10-01 12:06:00
+P019,Treatment,2026-10-01 12:37:00
+P019,Discharge,2026-10-01 13:07:00
+P020,Patient Registration,2026-10-01 09:53:00
+P020,Triage,2026-10-01 10:04:00
+P020,Doctor Consultation,2026-10-01 12:01:00
+P020,Lab Test,2026-10-01 13:30:00
+P020,Lab Results Review,2026-10-01 13:44:00
+P020,Treatment,2026-10-01 14:29:00
+P020,Discharge,2026-10-01 14:37:00
+P021,Patient Registration,2026-10-01 08:56:00
+P021,Triage,2026-10-01 09:01:00
+P021,Doctor Consultation,2026-10-01 09:40:00
+P021,Treatment,2026-10-01 10:05:00
+P021,Discharge,2026-10-01 10:15:00
+P022,Patient Registration,2026-10-01 15:00:00
+P022,Triage,2026-10-01 15:20:00
+P022,Doctor Consultation,2026-10-01 17:11:00
+P022,Treatment,2026-10-01 17:31:00
+P022,Discharge,2026-10-01 17:48:00
+P023,Patient Registration,2026-10-01 08:06:00
+P023,Triage,2026-10-01 08:19:00
+P023,Doctor Consultation,2026-10-01 08:54:00
+P023,Lab Test,2026-10-01 09:27:00
+P023,Lab Results Review,2026-10-01 10:12:00
+P023,Treatment,2026-10-01 10:53:00
+P023,Discharge,2026-10-01 11:02:00
+P024,Patient Registration,2026-10-01 11:17:00
+P024,Triage,2026-10-01 11:28:00
+P024,Doctor Consultation,2026-10-01 11:56:00
+P024,Lab Test,2026-10-01 13:16:00
+P024,Repeat Lab Test,2026-10-01 14:13:00
+P024,Lab Results Review,2026-10-01 14:53:00
+P024,Treatment,2026-10-01 15:36:00
+P024,Discharge,2026-10-01 15:46:00
+P025,Patient Registration,2026-10-01 09:03:00
+P025,Triage,2026-10-01 09:10:00
+P025,Doctor Consultation,2026-10-01 09:22:00
+P025,Lab Test,2026-10-01 09:39:00
+P025,Lab Results Review,2026-10-01 10:04:00
+P025,Treatment,2026-10-01 10:16:00
+P025,Discharge,2026-10-01 10:40:00
+P026,Patient Registration,2026-10-01 09:27:00
+P026,Triage,2026-10-01 09:42:00
+P026,Doctor Consultation,2026-10-01 09:58:00
+P026,Lab Test,2026-10-01 10:16:00
+P026,Lab Results Review,2026-10-01 10:45:00
+P026,Treatment,2026-10-01 10:59:00
+P026,Discharge,2026-10-01 11:04:00
+P027,Patient Registration,2026-10-01 15:54:00
+P027,Triage,2026-10-01 16:02:00
+P027,Doctor Consultation,2026-10-01 17:29:00
+P027,Lab Test,2026-10-01 18:51:00
+P027,Lab Results Review,2026-10-01 19:16:00
+P027,Treatment,2026-10-01 19:36:00
+P027,Discharge,2026-10-01 19:55:00
+P028,Patient Registration,2026-10-01 17:19:00
+P028,Triage,2026-10-01 17:24:00
+P028,Doctor Consultation,2026-10-01 17:51:00
+P028,Lab Test,2026-10-01 18:05:00
+P028,Lab Results Review,2026-10-01 18:21:00
+P028,Treatment,2026-10-01 18:40:00
+P028,Discharge,2026-10-01 18:53:00
+P029,Patient Registration,2026-10-01 12:53:00
+P029,Triage,2026-10-01 13:04:00
+P029,Doctor Consultation,2026-10-01 13:20:00
+P029,Lab Test,2026-10-01 13:46:00
+P029,Lab Results Review,2026-10-01 13:59:00
+P029,Doctor Consultation,2026-10-01 14:41:00
+P029,Treatment,2026-10-01 15:08:00
+P029,Discharge,2026-10-01 15:14:00
+P030,Patient Registration,2026-10-01 08:06:00
+P030,Triage,2026-10-01 08:15:00
+P030,Doctor Consultation,2026-10-01 08:33:00
+P030,Lab Test,2026-10-01 09:05:00
+P030,Lab Results Review,2026-10-01 09:15:00
+P030,Doctor Consultation,2026-10-01 10:30:00
+P030,Treatment,2026-10-01 10:49:00
+P030,Discharge,2026-10-01 11:11:00
+P031,Patient Registration,2026-10-01 08:39:00
+P031,Triage,2026-10-01 08:48:00
+P031,Doctor Consultation,2026-10-01 08:59:00
+P031,Lab Test,2026-10-01 09:34:00
+P031,Lab Results Review,2026-10-01 09:46:00
+P031,Treatment,2026-10-01 10:09:00
+P031,Discharge,2026-10-01 10:35:00
+P032,Patient Registration,2026-10-01 12:16:00
+P032,Triage,2026-10-01 12:32:00
+P032,Doctor Consultation,2026-10-01 13:10:00
+P032,Treatment,2026-10-01 13:29:00
+P032,Discharge,2026-10-01 13:41:00
+P033,Patient Registration,2026-10-01 10:48:00
+P033,Triage,2026-10-01 11:06:00
+P033,Doctor Consultation,2026-10-01 12:48:00
+P033,Treatment,2026-10-01 13:24:00
+P033,Discharge,2026-10-01 13:54:00
+P034,Patient Registration,2026-10-01 12:17:00
+P034,Triage,2026-10-01 12:27:00
+P034,Doctor Consultation,2026-10-01 12:40:00
+P034,Lab Test,2026-10-01 14:10:00
+P034,Lab Results Review,2026-10-01 14:49:00
+P034,Treatment,2026-10-01 15:13:00
+P034,Discharge,2026-10-01 15:25:00
+P035,Patient Registration,2026-10-01 08:26:00
+P035,Triage,2026-10-01 08:43:00
+P035,Doctor Consultation,2026-10-01 09:20:00
+P035,Lab Test,2026-10-01 09:41:00
+P035,Lab Results Review,2026-10-01 10:16:00
+P035,Treatment,2026-10-01 11:00:00
+P035,Discharge,2026-10-01 11:15:00
+P036,Patient Registration,2026-10-01 08:29:00
+P036,Triage,2026-10-01 08:42:00
+P036,Doctor Consultation,2026-10-01 10:15:00
+P036,Lab Test,2026-10-01 10:36:00
+P036,Lab Results Review,2026-10-01 11:06:00
+P036,Treatment,2026-10-01 11:48:00
+P036,Discharge,2026-10-01 11:56:00
+P037,Patient Registration,2026-10-01 14:39:00
+P037,Triage,2026-10-01 14:50:00
+P037,Doctor Consultation,2026-10-01 15:22:00
+P037,Lab Test,2026-10-01 15:57:00
+P037,Lab Results Review,2026-10-01 16:19:00
+P037,Treatment,2026-10-01 16:33:00
+P037,Discharge,2026-10-01 16:59:00
+P038,Patient Registration,2026-10-01 13:43:00
+P038,Triage,2026-10-01 13:58:00
+P038,Doctor Consultation,2026-10-01 14:11:00
+P038,Lab Test,2026-10-01 14:30:00
+P038,Lab Results Review,2026-10-01 15:00:00
+P038,Treatment,2026-10-01 15:28:00
+P038,Discharge,2026-10-01 15:50:00
+P039,Patient Registration,2026-10-01 10:12:00
+P039,Triage,2026-10-01 10:30:00
+P039,Doctor Consultation,2026-10-01 10:52:00
+P039,Lab Test,2026-10-01 11:21:00
+P039,Lab Results Review,2026-10-01 11:56:00
+P039,Treatment,2026-10-01 12:06:00
+P039,Discharge,2026-10-01 12:20:00
+P040,Patient Registration,2026-10-01 12:55:00
+P040,Triage,2026-10-01 13:13:00
+P040,Doctor Consultation,2026-10-01 13:42:00
+P040,Lab Test,2026-10-01 14:06:00
+P040,Lab Results Review,2026-10-01 14:48:00
+P040,Treatment,2026-10-01 15:08:00
+P040,Discharge,2026-10-01 15:34:00
+P041,Patient Registration,2026-10-01 09:29:00
+P041,Triage,2026-10-01 09:44:00
+P041,Doctor Consultation,2026-10-01 11:14:00
+P041,Lab Test,2026-10-01 11:30:00
+P041,Lab Results Review,2026-10-01 11:42:00
+P041,Doctor Consultation,2026-10-01 12:27:00
+P041,Treatment,2026-10-01 12:41:00
+P041,Discharge,2026-10-01 13:00:00
+P042,Patient Registration,2026-10-01 15:09:00
+P042,Triage,2026-10-01 15:20:00
+P042,Doctor Consultation,2026-10-01 15:42:00
+P042,Lab Test,2026-10-01 16:12:00
+P042,Lab Results Review,2026-10-01 16:28:00
+P042,Treatment,2026-10-01 16:52:00
+P042,Discharge,2026-10-01 17:02:00
+P043,Patient Registration,2026-10-01 16:54:00
+P043,Triage,2026-10-01 17:00:00
+P043,Doctor Consultation,2026-10-01 17:39:00
+P043,Treatment,2026-10-01 18:18:00
+P043,Discharge,2026-10-01 18:27:00
+P044,Patient Registration,2026-10-01 16:00:00
+P044,Triage,2026-10-01 16:15:00
+P044,Doctor Consultation,2026-10-01 16:53:00
+P044,Lab Test,2026-10-01 17:19:00
+P044,Lab Results Review,2026-10-01 18:04:00
+P044,Treatment,2026-10-01 18:24:00
+P044,Discharge,2026-10-01 18:52:00
+P045,Patient Registration,2026-10-01 16:10:00
+P045,Triage,2026-10-01 16:23:00
+P045,Doctor Consultation,2026-10-01 16:59:00
+P045,Lab Test,2026-10-01 17:25:00
+P045,Lab Results Review,2026-10-01 17:50:00
+P045,Doctor Consultation,2026-10-01 18:09:00
+P045,Treatment,2026-10-01 18:37:00
+P045,Discharge,2026-10-01 18:49:00
+P046,Patient Registration,2026-10-01 12:41:00
+P046,Triage,2026-10-01 12:56:00
+P046,Doctor Consultation,2026-10-01 13:08:00
+P046,Lab Test,2026-10-01 13:40:00
+P046,Lab Results Review,2026-10-01 14:03:00
+P046,Doctor Consultation,2026-10-01 14:44:00
+P046,Treatment,2026-10-01 15:15:00
+P046,Discharge,2026-10-01 15:37:00
+P047,Patient Registration,2026-10-01 16:01:00
+P047,Triage,2026-10-01 16:07:00
+P047,Doctor Consultation,2026-10-01 18:00:00
+P047,Lab Test,2026-10-01 18:32:00
+P047,Repeat Lab Test,2026-10-01 19:28:00
+P047,Lab Results Review,2026-10-01 20:02:00
+P047,Treatment,2026-10-01 20:34:00
+P047,Discharge,2026-10-01 20:48:00
+P048,Patient Registration,2026-10-01 14:43:00
+P048,Triage,2026-10-01 14:55:00
+P048,Doctor Consultation,2026-10-01 15:13:00
+P048,Lab Test,2026-10-01 16:34:00
+P048,Lab Results Review,2026-10-01 17:09:00
+P048,Treatment,2026-10-01 17:48:00
+P048,Discharge,2026-10-01 17:57:00
+P049,Patient Registration,2026-10-01 17:07:00
+P049,Triage,2026-10-01 17:24:00
+P049,Doctor Consultation,2026-10-01 17:55:00
+P049,Lab Test,2026-10-01 18:09:00
+P049,Lab Results Review,2026-10-01 18:30:00
+P049,Doctor Consultation,2026-10-01 19:09:00
+P049,Treatment,2026-10-01 19:39:00
+P049,Discharge,2026-10-01 19:50:00
+P050,Patient Registration,2026-10-01 15:48:00
+P050,Triage,2026-10-01 16:03:00
+P050,Doctor Consultation,2026-10-01 16:25:00
+P050,Lab Test,2026-10-01 16:48:00
+P050,Lab Results Review,2026-10-01 17:03:00
+P050,Treatment,2026-10-01 17:47:00
+P050,Discharge,2026-10-01 17:53:00
+P051,Patient Registration,2026-10-01 14:00:00
+P051,Triage,2026-10-01 14:07:00
+P051,Doctor Consultation,2026-10-01 14:37:00
+P051,Lab Test,2026-10-01 15:52:00
+P051,Lab Results Review,2026-10-01 16:03:00
+P051,Treatment,2026-10-01 16:28:00
+P051,Discharge,2026-10-01 16:37:00
+P052,Patient Registration,2026-10-01 16:05:00
+P052,Triage,2026-10-01 16:16:00
+P052,Doctor Consultation,2026-10-01 16:34:00
+P052,Treatment,2026-10-01 16:54:00
+P052,Discharge,2026-10-01 17:18:00
+P053,Patient Registration,2026-10-01 09:59:00
+P053,Triage,2026-10-01 10:13:00
+P053,Doctor Consultation,2026-10-01 11:16:00
+P053,Treatment,2026-10-01 11:50:00
+P053,Discharge,2026-10-01 12:07:00
+P054,Patient Registration,2026-10-01 11:24:00
+P054,Triage,2026-10-01 11:36:00
+P054,Doctor Consultation,2026-10-01 13:14:00
+P054,Treatment,2026-10-01 13:31:00
+P054,Discharge,2026-10-01 14:01:00
+P055,Patient Registration,2026-10-01 17:40:00
+P055,Triage,2026-10-01 17:56:00
+P055,Doctor Consultation,2026-10-01 18:27:00
+P055,Lab Test,2026-10-01 18:47:00
+P055,Repeat Lab Test,2026-10-01 19:33:00
+P055,Lab Results Review,2026-10-01 20:14:00
+P055,Doctor Consultation,2026-10-01 20:52:00
+P055,Treatment,2026-10-01 21:31:00
+P055,Discharge,2026-10-01 21:58:00
+P056,Patient Registration,2026-10-01 10:40:00
+P056,Triage,2026-10-01 10:50:00
+P056,Doctor Consultation,2026-10-01 11:30:00
+P056,Lab Test,2026-10-01 11:57:00
+P056,Lab Results Review,2026-10-01 12:36:00
+P056,Treatment,2026-10-01 13:03:00
+P056,Discharge,2026-10-01 13:18:00
+P057,Patient Registration,2026-10-01 12:12:00
+P057,Triage,2026-10-01 12:25:00
+P057,Doctor Consultation,2026-10-01 12:42:00
+P057,Treatment,2026-10-01 13:16:00
+P057,Discharge,2026-10-01 13:31:00
+P058,Patient Registration,2026-10-01 08:33:00
+P058,Triage,2026-10-01 08:48:00
+P058,Doctor Consultation,2026-10-01 10:15:00
+P058,Lab Test,2026-10-01 10:33:00
+P058,Lab Results Review,2026-10-01 11:00:00
+P058,Treatment,2026-10-01 11:43:00
+P058,Discharge,2026-10-01 11:54:00
+P059,Patient Registration,2026-10-01 09:29:00
+P059,Triage,2026-10-01 09:47:00
+P059,Doctor Consultation,2026-10-01 10:21:00
+P059,Lab Test,2026-10-01 10:53:00
+P059,Lab Results Review,2026-10-01 11:04:00
+P059,Doctor Consultation,2026-10-01 11:33:00
+P059,Treatment,2026-10-01 12:08:00
+P059,Discharge,2026-10-01 12:35:00
+P060,Patient Registration,2026-10-01 12:12:00
+P060,Triage,2026-10-01 12:28:00
+P060,Doctor Consultation,2026-10-01 12:54:00
+P060,Lab Test,2026-10-01 13:21:00
+P060,Lab Results Review,2026-10-01 14:00:00
+P060,Doctor Consultation,2026-10-01 14:31:00
+P060,Treatment,2026-10-01 14:55:00
+P060,Discharge,2026-10-01 15:03:00
+P061,Patient Registration,2026-10-01 11:20:00
+P061,Triage,2026-10-01 11:28:00
+P061,Doctor Consultation,2026-10-01 12:08:00
+P061,Treatment,2026-10-01 12:29:00
+P061,Discharge,2026-10-01 12:40:00
+P062,Patient Registration,2026-10-01 11:45:00
+P062,Triage,2026-10-01 11:58:00
+P062,Doctor Consultation,2026-10-01 12:32:00
+P062,Lab Test,2026-10-01 12:45:00
+P062,Lab Results Review,2026-10-01 13:13:00
+P062,Doctor Consultation,2026-10-01 13:39:00
+P062,Treatment,2026-10-01 14:08:00
+P062,Discharge,2026-10-01 14:13:00
+P063,Patient Registration,2026-10-01 17:08:00
+P063,Triage,2026-10-01 17:21:00
+P063,Doctor Consultation,2026-10-01 18:27:00
+P063,Lab Test,2026-10-01 18:41:00
+P063,Lab Results Review,2026-10-01 19:22:00
+P063,Doctor Consultation,2026-10-01 19:37:00
+P063,Treatment,2026-10-01 20:05:00
+P063,Discharge,2026-10-01 20:25:00
+P064,Patient Registration,2026-10-01 16:14:00
+P064,Triage,2026-10-01 16:29:00
+P064,Doctor Consultation,2026-10-01 17:35:00
+P064,Lab Test,2026-10-01 17:48:00
+P064,Lab Results Review,2026-10-01 18:23:00
+P064,Treatment,2026-10-01 18:36:00
+P064,Discharge,2026-10-01 18:45:00
+P065,Patient Registration,2026-10-01 10:37:00
+P065,Triage,2026-10-01 10:51:00
+P065,Doctor Consultation,2026-10-01 12:22:00
+P065,Lab Test,2026-10-01 12:51:00
+P065,Lab Results Review,2026-10-01 13:15:00
+P065,Treatment,2026-10-01 13:49:00
+P065,Discharge,2026-10-01 14:08:00
+P066,Patient Registration,2026-10-01 15:36:00
+P066,Triage,2026-10-01 15:54:00
+P066,Doctor Consultation,2026-10-01 16:23:00
+P066,Lab Test,2026-10-01 16:36:00
+P066,Lab Results Review,2026-10-01 16:59:00
+P066,Treatment,2026-10-01 17:25:00
+P066,Discharge,2026-10-01 17:51:00
+P067,Patient Registration,2026-10-01 09:25:00
+P067,Triage,2026-10-01 09:37:00
+P067,Doctor Consultation,2026-10-01 10:46:00
+P067,Lab Test,2026-10-01 11:18:00
+P067,Lab Results Review,2026-10-01 11:46:00
+P067,Doctor Consultation,2026-10-01 12:19:00
+P067,Treatment,2026-10-01 12:47:00
+P067,Discharge,2026-10-01 13:14:00
+P068,Patient Registration,2026-10-01 15:45:00
+P068,Triage,2026-10-01 15:57:00
+P068,Doctor Consultation,2026-10-01 16:32:00
+P068,Treatment,2026-10-01 16:54:00
+P068,Discharge,2026-10-01 17:12:00
+P069,Patient Registration,2026-10-01 10:02:00
+P069,Triage,2026-10-01 10:14:00
+P069,Doctor Consultation,2026-10-01 10:53:00
+P069,Lab Test,2026-10-01 11:56:00
+P069,Lab Results Review,2026-10-01 12:25:00
+P069,Treatment,2026-10-01 12:53:00
+P069,Discharge,2026-10-01 13:12:00
+P070,Patient Registration,2026-10-01 10:11:00
+P070,Triage,2026-10-01 10:25:00
+P070,Doctor Consultation,2026-10-01 11:05:00
+P070,Lab Test,2026-10-01 11:29:00
+P070,Repeat Lab Test,2026-10-01 11:51:00
+P070,Lab Results Review,2026-10-01 12:28:00
+P070,Treatment,2026-10-01 12:54:00
+P070,Discharge,2026-10-01 12:59:00
+P071,Patient Registration,2026-10-01 09:35:00
+P071,Triage,2026-10-01 09:40:00
+P071,Doctor Consultation,2026-10-01 10:11:00
+P071,Treatment,2026-10-01 10:23:00
+P071,Discharge,2026-10-01 10:52:00
+P072,Patient Registration,2026-10-01 11:03:00
+P072,Triage,2026-10-01 11:22:00
+P072,Doctor Consultation,2026-10-01 11:37:00
+P072,Treatment,2026-10-01 12:14:00
+P072,Discharge,2026-10-01 12:39:00
+P073,Patient Registration,2026-10-01 16:24:00
+P073,Triage,2026-10-01 16:44:00
+P073,Doctor Consultation,2026-10-01 17:04:00
+P073,Lab Test,2026-10-01 18:14:00
+P073,Lab Results Review,2026-10-01 18:55:00
+P073,Doctor Consultation,2026-10-01 20:10:00
+P073,Treatment,2026-10-01 20:45:00
+P073,Discharge,2026-10-01 21:14:00
+P074,Patient Registration,2026-10-01 17:24:00
+P074,Triage,2026-10-01 17:43:00
+P074,Doctor Consultation,2026-10-01 19:15:00
+P074,Lab Test,2026-10-01 19:37:00
+P074,Lab Results Review,2026-10-01 19:47:00
+P074,Treatment,2026-10-01 20:31:00
+P074,Discharge,2026-10-01 20:50:00
+P075,Patient Registration,2026-10-01 15:04:00
+P075,Triage,2026-10-01 15:15:00
+P075,Doctor Consultation,2026-10-01 15:44:00
+P075,Treatment,2026-10-01 16:22:00
+P075,Discharge,2026-10-01 16:51:00
+P076,Patient Registration,2026-10-01 08:54:00
+P076,Triage,2026-10-01 09:07:00
+P076,Doctor Consultation,2026-10-01 09:46:00
+P076,Lab Test,2026-10-01 10:11:00
+P076,Lab Results Review,2026-10-01 10:36:00
+P076,Treatment,2026-10-01 11:05:00
+P076,Discharge,2026-10-01 11:27:00
+P077,Patient Registration,2026-10-01 08:19:00
+P077,Triage,2026-10-01 08:37:00
+P077,Doctor Consultation,2026-10-01 09:51:00
+P077,Lab Test,2026-10-01 11:44:00
+P077,Lab Results Review,2026-10-01 12:12:00
+P077,Treatment,2026-10-01 12:39:00
+P077,Discharge,2026-10-01 12:57:00
+P078,Patient Registration,2026-10-01 16:18:00
+P078,Triage,2026-10-01 16:30:00
+P078,Doctor Consultation,2026-10-01 16:44:00
+P078,Lab Test,2026-10-01 17:10:00
+P078,Lab Results Review,2026-10-01 17:28:00
+P078,Treatment,2026-10-01 17:55:00
+P078,Discharge,2026-10-01 18:24:00
+P079,Patient Registration,2026-10-01 15:07:00
+P079,Triage,2026-10-01 15:20:00
+P079,Doctor Consultation,2026-10-01 15:39:00
+P079,Lab Test,2026-10-01 16:07:00
+P079,Lab Results Review,2026-10-01 16:48:00
+P079,Treatment,2026-10-01 17:26:00
+P079,Discharge,2026-10-01 17:48:00
+P080,Patient Registration,2026-10-01 16:18:00
+P080,Triage,2026-10-01 16:33:00
+P080,Doctor Consultation,2026-10-01 17:00:00
+P080,Lab Test,2026-10-01 17:16:00
+P080,Lab Results Review,2026-10-01 17:41:00
+P080,Treatment,2026-10-01 18:05:00
+P080,Discharge,2026-10-01 18:34:00
+P081,Patient Registration,2026-10-01 15:01:00
+P081,Triage,2026-10-01 15:16:00
+P081,Doctor Consultation,2026-10-01 15:48:00
+P081,Treatment,2026-10-01 16:22:00
+P081,Discharge,2026-10-01 16:39:00
+P082,Patient Registration,2026-10-01 10:39:00
+P082,Triage,2026-10-01 10:45:00
+P082,Doctor Consultation,2026-10-01 13:00:00
+P082,Lab Test,2026-10-01 14:54:00
+P082,Lab Results Review,2026-10-01 15:37:00
+P082,Treatment,2026-10-01 15:47:00
+P082,Discharge,2026-10-01 16:15:00
+P083,Patient Registration,2026-10-01 10:31:00
+P083,Triage,2026-10-01 10:40:00
+P083,Doctor Consultation,2026-10-01 12:13:00
+P083,Lab Test,2026-10-01 12:43:00
+P083,Repeat Lab Test,2026-10-01 13:24:00
+P083,Lab Results Review,2026-10-01 14:08:00
+P083,Treatment,2026-10-01 14:38:00
+P083,Discharge,2026-10-01 15:03:00
+P084,Patient Registration,2026-10-01 16:24:00
+P084,Triage,2026-10-01 16:30:00
+P084,Doctor Consultation,2026-10-01 16:47:00
+P084,Lab Test,2026-10-01 17:04:00
+P084,Lab Results Review,2026-10-01 17:41:00
+P084,Treatment,2026-10-01 17:57:00
+P084,Discharge,2026-10-01 18:16:00
+P085,Patient Registration,2026-10-01 10:53:00
+P085,Triage,2026-10-01 10:58:00
+P085,Doctor Consultation,2026-10-01 12:05:00
+P085,Lab Test,2026-10-01 12:19:00
+P085,Lab Results Review,2026-10-01 12:55:00
+P085,Treatment,2026-10-01 13:16:00
+P085,Discharge,2026-10-01 13:26:00
+P086,Patient Registration,2026-10-01 11:00:00
+P086,Triage,2026-10-01 11:17:00
+P086,Doctor Consultation,2026-10-01 11:34:00
+P086,Lab Test,2026-10-01 11:51:00
+P086,Lab Results Review,2026-10-01 12:17:00
+P086,Treatment,2026-10-01 12:27:00
+P086,Discharge,2026-10-01 12:57:00
+P087,Patient Registration,2026-10-01 15:59:00
+P087,Triage,2026-10-01 16:09:00
+P087,Doctor Consultation,2026-10-01 17:53:00
+P087,Treatment,2026-10-01 18:22:00
+P087,Discharge,2026-10-01 18:47:00
+P088,Patient Registration,2026-10-01 15:17:00
+P088,Triage,2026-10-01 15:36:00
+P088,Doctor Consultation,2026-10-01 15:52:00
+P088,Treatment,2026-10-01 16:32:00
+P088,Discharge,2026-10-01 16:40:00
+P089,Patient Registration,2026-10-01 12:06:00
+P089,Triage,2026-10-01 12:22:00
+P089,Doctor Consultation,2026-10-01 12:54:00
+P089,Lab Test,2026-10-01 13:25:00
+P089,Lab Results Review,2026-10-01 13:35:00
+P089,Treatment,2026-10-01 13:48:00
+P089,Discharge,2026-10-01 14:12:00
+P090,Patient Registration,2026-10-01 16:31:00
+P090,Triage,2026-10-01 16:43:00
+P090,Doctor Consultation,2026-10-01 17:04:00
+P090,Lab Test,2026-10-01 18:20:00
+P090,Lab Results Review,2026-10-01 18:38:00
+P090,Treatment,2026-10-01 18:50:00
+P090,Discharge,2026-10-01 19:04:00
+P091,Patient Registration,2026-10-01 15:32:00
+P091,Triage,2026-10-01 15:48:00
+P091,Doctor Consultation,2026-10-01 16:00:00
+P091,Treatment,2026-10-01 16:30:00
+P091,Discharge,2026-10-01 16:58:00
+P092,Patient Registration,2026-10-01 15:07:00
+P092,Triage,2026-10-01 15:18:00
+P092,Doctor Consultation,2026-10-01 17:27:00
+P092,Treatment,2026-10-01 18:00:00
+P092,Discharge,2026-10-01 18:21:00
+P093,Patient Registration,2026-10-01 16:36:00
+P093,Triage,2026-10-01 16:46:00
+P093,Doctor Consultation,2026-10-01 17:22:00
+P093,Treatment,2026-10-01 17:50:00
+P093,Discharge,2026-10-01 18:18:00
+P094,Patient Registration,2026-10-01 13:47:00
+P094,Triage,2026-10-01 14:06:00
+P094,Doctor Consultation,2026-10-01 14:20:00
+P094,Treatment,2026-10-01 14:44:00
+P094,Discharge,2026-10-01 15:10:00
+P095,Patient Registration,2026-10-01 14:51:00
+P095,Triage,2026-10-01 15:07:00
+P095,Doctor Consultation,2026-10-01 16:57:00
+P095,Lab Test,2026-10-01 17:21:00
+P095,Lab Results Review,2026-10-01 17:47:00
+P095,Treatment,2026-10-01 18:20:00
+P095,Discharge,2026-10-01 18:28:00
+P096,Patient Registration,2026-10-01 12:03:00
+P096,Triage,2026-10-01 12:08:00
+P096,Doctor Consultation,2026-10-01 12:48:00
+P096,Lab Test,2026-10-01 13:05:00
+P096,Lab Results Review,2026-10-01 13:44:00
+P096,Treatment,2026-10-01 14:13:00
+P096,Discharge,2026-10-01 14:38:00
+P097,Patient Registration,2026-10-01 14:59:00
+P097,Triage,2026-10-01 15:08:00
+P097,Doctor Consultation,2026-10-01 16:12:00
+P097,Lab Test,2026-10-01 16:25:00
+P097,Lab Results Review,2026-10-01 17:09:00
+P097,Doctor Consultation,2026-10-01 17:53:00
+P097,Treatment,2026-10-01 18:26:00
+P097,Discharge,2026-10-01 18:52:00
+P098,Patient Registration,2026-10-01 17:17:00
+P098,Triage,2026-10-01 17:26:00
+P098,Doctor Consultation,2026-10-01 17:56:00
+P098,Lab Test,2026-10-01 18:19:00
+P098,Lab Results Review,2026-10-01 18:46:00
+P098,Doctor Consultation,2026-10-01 19:24:00
+P098,Treatment,2026-10-01 19:47:00
+P098,Discharge,2026-10-01 20:06:00
+P099,Patient Registration,2026-10-01 15:37:00
+P099,Triage,2026-10-01 15:53:00
+P099,Doctor Consultation,2026-10-01 18:20:00
+P099,Lab Test,2026-10-01 18:50:00
+P099,Lab Results Review,2026-10-01 19:25:00
+P099,Doctor Consultation,2026-10-01 19:47:00
+P099,Treatment,2026-10-01 20:26:00
+P099,Discharge,2026-10-01 20:33:00
+P100,Patient Registration,2026-10-01 11:42:00
+P100,Triage,2026-10-01 11:47:00
+P100,Doctor Consultation,2026-10-01 13:29:00
+P100,Lab Test,2026-10-01 15:05:00
+P100,Lab Results Review,2026-10-01 15:50:00
+P100,Doctor Consultation,2026-10-01 16:18:00
+P100,Treatment,2026-10-01 16:42:00
+P100,Discharge,2026-10-01 16:57:00
