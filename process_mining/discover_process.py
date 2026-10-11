@@ -79,49 +79,6 @@ print(activity_counts)
 
 print("\n========== DAY 2: PROCESS DISCOVERY ==========")
 
-# 1. Discover the Directly-Follows Graph
-#dfg, start_activities, end_activities = pm4py.discover_dfg(
-#    event_log
-#)
-#
-#print("\n--- Start Activities ---")
-#print(start_activities)
-#
-#print("\n--- End Activities ---")
-#print(end_activities)
-#
-## 2. Show the most frequent activity transitions
-#print("\n--- Top 10 Activity Transitions ---")
-#
-#top_transitions = sorted(
-#    dfg.items(),
-#    key=lambda item: item[1],
-#    reverse=True
-#)[:10]
-#
-#for (source, target), count in top_transitions:
-#    print(f"{source} -> {target}: {count} times")
-#
-## 3. Show total discovered transitions
-#print("\nTotal unique transitions:", len(dfg))
-#
-## 4. Generate the process map
-#print("\nOpening process map...")
-#
-#pm4py.view_dfg(
-#    dfg,
-#    start_activities,
-#    end_activities
-#)
-#
-#print("\nProcess discovery completed!")
-
-
-
-
-
-# Day 2: Patient activities order
-
 print("\nPatient activities ka order:")
 
 # arrnage the patient activities to  time order 
