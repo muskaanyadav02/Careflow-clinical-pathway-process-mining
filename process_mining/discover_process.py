@@ -69,3 +69,109 @@ activity_counts = (
 )
 
 print(activity_counts)
+
+
+
+
+# ==========================================
+# DAY 2: PROCESS DISCOVERY
+# ==========================================
+
+print("\n========== DAY 2: PROCESS DISCOVERY ==========")
+
+# 1. Discover the Directly-Follows Graph
+#dfg, start_activities, end_activities = pm4py.discover_dfg(
+#    event_log
+#)
+#
+#print("\n--- Start Activities ---")
+#print(start_activities)
+#
+#print("\n--- End Activities ---")
+#print(end_activities)
+#
+## 2. Show the most frequent activity transitions
+#print("\n--- Top 10 Activity Transitions ---")
+#
+#top_transitions = sorted(
+#    dfg.items(),
+#    key=lambda item: item[1],
+#    reverse=True
+#)[:10]
+#
+#for (source, target), count in top_transitions:
+#    print(f"{source} -> {target}: {count} times")
+#
+## 3. Show total discovered transitions
+#print("\nTotal unique transitions:", len(dfg))
+#
+## 4. Generate the process map
+#print("\nOpening process map...")
+#
+#pm4py.view_dfg(
+#    dfg,
+#    start_activities,
+#    end_activities
+#)
+#
+#print("\nProcess discovery completed!")
+
+
+
+
+
+# Day 2: Patient activities order
+
+print("\nPatient activities ka order:")
+
+# arrnage the patient activities to  time order 
+for patient_id, patient_data in event_log.groupby("case:concept:name"):
+
+    activities = patient_data["concept:name"].tolist()
+
+    print(patient_id, "->", " -> ".join(activities))
+
+
+# Which activities is Hapenning  more
+
+print("\nWhich activities is Hapenning  more:")
+
+activity_count = event_log["concept:name"].value_counts()
+
+print(activity_count)
+
+
+
+
+# Where the paitent goes to after one activity
+
+print("\nActivity after next activity:")
+
+
+for patient_id, patient_data in event_log.groupby("case:concept:name"):
+
+    # Patient activities  order
+    activities = patient_data["concept:name"].tolist()
+
+    # Ativity after one activity 
+    for i in range(len(activities) - 1):
+        print(activities[i], "->", activities[i + 1])
+
+
+
+print("\nMost common activity connections:")
+
+transitions = []
+
+for patient_id, patient_data in event_log.groupby("case:concept:name"):
+    activities = patient_data["concept:name"].tolist()
+
+    for i in range(len(activities) - 1):
+        transitions.append((activities[i], activities[i + 1]))
+
+transition_count = pd.Series(transitions).value_counts()
+
+print(transition_count.head(10))
+
+
+
