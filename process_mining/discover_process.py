@@ -73,54 +73,7 @@ print(activity_counts)
 
 
 
-# ==========================================
-# DAY 2: PROCESS DISCOVERY
-# ==========================================
-
-print("\n========== DAY 2: PROCESS DISCOVERY ==========")
-
-# 1. Discover the Directly-Follows Graph
-#dfg, start_activities, end_activities = pm4py.discover_dfg(
-#    event_log
-#)
-#
-#print("\n--- Start Activities ---")
-#print(start_activities)
-#
-#print("\n--- End Activities ---")
-#print(end_activities)
-#
-## 2. Show the most frequent activity transitions
-#print("\n--- Top 10 Activity Transitions ---")
-#
-#top_transitions = sorted(
-#    dfg.items(),
-#    key=lambda item: item[1],
-#    reverse=True
-#)[:10]
-#
-#for (source, target), count in top_transitions:
-#    print(f"{source} -> {target}: {count} times")
-#
-## 3. Show total discovered transitions
-#print("\nTotal unique transitions:", len(dfg))
-#
-## 4. Generate the process map
-#print("\nOpening process map...")
-#
-#pm4py.view_dfg(
-#    dfg,
-#    start_activities,
-#    end_activities
-#)
-#
-#print("\nProcess discovery completed!")
-
-
-
-
-
-# Day 2: Patient activities order
+# Patient activities order
 
 print("\nPatient activities ka order:")
 
@@ -175,3 +128,119 @@ print(transition_count.head(10))
 
 
 
+
+# Calculate time between activities
+event_log = event_log.sort_values(
+    ["case:concept:name", "time:timestamp"]
+).copy()
+
+# Find the next activity and its timestamp for each patient
+event_log["Next_Activity"] = (
+    event_log.groupby("case:concept:name")["concept:name"].shift(-1)
+)
+
+event_log["Next_Timestamp"] = (
+    event_log.groupby("case:concept:name")["time:timestamp"].shift(-1)
+)
+
+# Calculate time taken in minutes
+event_log["Transition_Time_Minutes"] = (
+    event_log["Next_Timestamp"] - event_log["time:timestamp"]
+).dt.total_seconds() / 60
+
+# Remove the last activity of each patient
+transitions_df = event_log.dropna(
+    subset=["Next_Activity", "Next_Timestamp"]
+).copy()
+
+print("Transition time calculated successfully!")
+print(
+    transitions_df[
+        [
+            "case:concept:name",
+            "concept:name",
+            "Next_Activity",
+            "Transition_Time_Minutes"
+        ]
+    ].head(10)
+)
+
+
+
+# Calculate time between two activities
+
+event_log["Next_Timestamp"] = (
+    event_log.groupby("case:concept:name")["time:timestamp"].shift(-1)
+)
+
+event_log["Waiting_Time_Minutes"] = (
+    event_log["Next_Timestamp"] - event_log["time:timestamp"]
+).dt.total_seconds() / 60
+
+print(event_log[[
+    "case:concept:name",
+    "concept:name",
+    "time:timestamp",
+    "Next_Timestamp",
+    "Waiting_Time_Minutes"]].head(10))
+
+
+    
+
+print("\n--- Average Time Between Activities ---")
+
+average_times = (
+    transitions_df.groupby(
+        ["concept:name", "Next_Activity"]
+    )["Transition_Time_Minutes"]
+    .mean()
+    .reset_index()
+)
+
+average_times = average_times.sort_values(
+    "Transition_Time_Minutes",
+    ascending=False
+)
+
+print(average_times.to_string(index=False))
+
+
+
+
+# Day 4: Patient Process Map using PM4Py
+
+print("\nCreating Patient Process Map...")
+
+# Convert data into PM4Py format
+event_log["time:timestamp"] = pd.to_datetime(
+    event_log["time:timestamp"]
+)
+
+
+
+
+# Create Event Log
+
+import os
+os.environ["PATH"] += os.pathsep + r"C:\Program Files\Graphviz\bin"
+
+pm_log = pm4py.convert_to_event_log(event_log)
+
+# Discover process map
+dfg, start_activities, end_activities = pm4py.discover_dfg(pm_log)
+
+print("\nStart Activities:")
+print(start_activities)
+
+print("\nEnd Activities:")
+print(end_activities)
+
+print("\nProcess Map Connections:")
+print(dfg)
+
+# Show Process Map
+pm4py.view_dfg(
+    dfg,
+    start_activities,
+    end_activities
+) 
