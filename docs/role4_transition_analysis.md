@@ -64,3 +64,30 @@ Differences may reflect legitimate variations in patient care.
 ### Next Steps
 Validate the expected pathway with the project team and perform
 more detailed conformance checking before reporting clinical deviations.
+## 9. SQL Testing and Validation
+
+### Database Setup
+- Database: careflow_db
+- Table: patient_events
+- Total event records: 676
+
+### Testing Performed
+1. Imported the sample event log into MySQL.
+2. Verified the event count using COUNT(*).
+3. Executed the SQL transition-time analysis.
+4. Compared the SQL results with the Python analysis.
+
+### Validation Result
+The SQL output matched the Python results for the
+three longest-average transitions checked.
+
+| Transition | Occurrences | Average Interval |
+|---|---:|---:|
+| Triage -> Doctor Consultation | 100 | 49.82 minutes |
+| Lab Test -> Repeat Lab Test | 6 | 44.83 minutes |
+| Lab Results Review -> Doctor Consultation | 24 | 40.42 minutes |
+
+### Limitations
+The results are based on a sample dataset.
+Long intervals identify transitions for further investigation,
+but do not independently prove clinical bottlenecks.
