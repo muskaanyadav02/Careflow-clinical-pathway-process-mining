@@ -133,3 +133,59 @@ The current analysis performs an exact sequence comparison. It does not implemen
 From the project root directory, run:
 
 `py process_mining/conformance_check.py`
+## 11. Process Deviation Summary
+
+### Objective
+The objective of this analysis is to summarize differences between recorded patient journeys and the illustrative expected pathway.
+
+### Methodology
+1. Load the existing patient-level conformance results.
+2. Calculate the total number of patient journeys.
+3. Count exact pathway matches and differing journeys.
+4. Count the additional activities recorded in the results.
+5. Summarize missing activities.
+6. Count the reported first-difference patterns.
+7. Export the summary to a separate CSV file.
+
+### Results
+
+The analysis summarized 100 patient journeys.
+
+- Exact pathway matches: 27
+- Journeys differing from the illustrative pathway: 73
+- Exact-match percentage: 27.00%
+
+Additional activities reported:
+
+- Lab Test: 73 patient journeys
+- Lab Results Review: 73 patient journeys
+- Repeat Lab Test: 6 patient journeys
+
+No missing activities were recorded in the existing conformance results.
+
+The most frequent first-difference pattern was:
+
+Position 4: expected 'Treatment', found 'Lab Test'
+
+This pattern was reported for 73 patient journeys.
+
+### Output Files
+
+Input:
+`data/processed/conformance_results.csv`
+
+Python script:
+`process_mining/deviation_summary.py`
+
+Generated summary:
+`data/processed/deviation_summary.csv`
+
+### Limitations
+
+The summary is based on the existing conformance results and an illustrative expected pathway that has not been clinically validated.
+
+Additional activities are activities that do not appear in the illustrative pathway. Their presence does not establish that they are unnecessary or inappropriate.
+
+The first-difference pattern identifies a difference in sequence, not a confirmed operational or clinical problem.
+
+Further investigation and an approved clinical pathway would be required to assess the significance of these differences.

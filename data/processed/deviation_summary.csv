@@ -1,0 +1,8 @@
+Category,Finding,Patient_Count
+Overall,Total patient journeys,100
+Overall,Exact pathway matches,27
+Overall,Journeys differing from expected pathway,73
+Additional Activity,Lab Test,73
+Additional Activity,Lab Results Review,73
+Additional Activity,Repeat Lab Test,6
+First Difference,"Position 4: expected 'Treatment', found 'Lab Test'",73
