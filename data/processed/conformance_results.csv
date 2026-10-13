@@ -1,0 +1,101 @@
+Case_ID,Actual_Journey,Exact_Match,Missing_Activities,Additional_Activities,First_Difference
+P001,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Repeat Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Repeat Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P002,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P003,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P004,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P005,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P006,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P007,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P008,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P009,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P010,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P011,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P012,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P013,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P014,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P015,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P016,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P017,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P018,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P019,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P020,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P021,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P022,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P023,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P024,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Repeat Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Repeat Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P025,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P026,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P027,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P028,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P029,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P030,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P031,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P032,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P033,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P034,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P035,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P036,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P037,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P038,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P039,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P040,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P041,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P042,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P043,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P044,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P045,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P046,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P047,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Repeat Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Repeat Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P048,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P049,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P050,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P051,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P052,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P053,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P054,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P055,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Repeat Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Repeat Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P056,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P057,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P058,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P059,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P060,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P061,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P062,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P063,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P064,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P065,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P066,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P067,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P068,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P069,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P070,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Repeat Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Repeat Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P071,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P072,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P073,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P074,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P075,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P076,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P077,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P078,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P079,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P080,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P081,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P082,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P083,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Repeat Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Repeat Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P084,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P085,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P086,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P087,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P088,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P089,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P090,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P091,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P092,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P093,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P094,Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge,True,None,None,None
+P095,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P096,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P097,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P098,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P099,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
+P100,Patient Registration -> Triage -> Doctor Consultation -> Lab Test -> Lab Results Review -> Doctor Consultation -> Treatment -> Discharge,False,None,"Lab Test, Lab Results Review","Position 4: expected 'Treatment', found 'Lab Test'"
