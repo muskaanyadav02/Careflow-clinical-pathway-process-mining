@@ -78,7 +78,6 @@ print(activity_counts)
 # ==========================================
 
 print("\n========== DAY 2: PROCESS DISCOVERY ==========")
->>>>>>> 212668652a0ced09da923b6512fb3d0916ee3b60
 
 print("\nPatient activities ka order:")
 
