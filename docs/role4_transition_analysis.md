@@ -91,3 +91,45 @@ three longest-average transitions checked.
 The results are based on a sample dataset.
 Long intervals identify transitions for further investigation,
 but do not independently prove clinical bottlenecks.
+## 10. Patient Pathway Conformance Analysis
+
+### Objective
+The purpose of this analysis is to compare each patient's recorded activity sequence with an illustrative expected pathway and identify differences.
+
+### Illustrative Expected Pathway
+Patient Registration -> Triage -> Doctor Consultation -> Treatment -> Discharge
+
+Note: This pathway is used for demonstration only. It has not been confirmed as an approved clinical standard.
+
+### Methodology
+1. Load the patient event log using Python and pandas.
+2. Convert event timestamps into datetime format.
+3. Sort events by patient ID and timestamp.
+4. Group activities into individual patient journeys.
+5. Compare each journey with the illustrative expected pathway.
+6. Identify missing expected activities, additional activities, and the first sequence difference.
+7. Export patient-level results to a CSV file.
+
+### Results
+The analysis processed 100 patient journeys.
+
+- Exact pathway matches: 27
+- Journeys differing from the expected pathway: 73
+- Exact pathway match percentage: 27.00%
+
+### Output
+The patient-level results are saved to:
+
+`data/processed/conformance_results.csv`
+
+The output includes the patient ID, actual journey, exact-match status, missing activities, additional activities, and first identified difference.
+
+### Limitations
+The expected pathway is illustrative and has not been clinically validated. A difference does not automatically indicate a clinical error or poor-quality care. Some activities may be optional, repeated, or appropriate for particular patients.
+
+The current analysis performs an exact sequence comparison. It does not implement formal process-mining conformance metrics or determine whether deviations are clinically appropriate.
+
+### How to Run
+From the project root directory, run:
+
+`py process_mining/conformance_check.py`
