@@ -87,14 +87,9 @@ print("\nBottleneck analysis completed!")
 
 
 
-
-
 import matplotlib
 matplotlib.rcParams["font.family"] = "DejaVu Sans"
 matplotlib.rcParams["font.enable_last_resort"] = False
-
-
-
 
 import matplotlib.pyplot as plt
 
@@ -103,7 +98,7 @@ import matplotlib.pyplot as plt
 top = average_times.head(10)
 
 # Create chart
-plt.figure(figsize=(10, 5))
+plt.figure(figsize=(12, 6))
 
 plt.bar(
     range(len(top)),

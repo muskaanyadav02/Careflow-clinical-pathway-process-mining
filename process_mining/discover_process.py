@@ -74,10 +74,10 @@ print(activity_counts)
 
 # Patient activities order
 # ==========================================
-# DAY 2: PROCESS DISCOVERY
+# PROCESS DISCOVERY
 # ==========================================
 
-print("\n========== DAY 2: PROCESS DISCOVERY ==========")
+print("\n==========  PROCESS DISCOVERY ==========")
 
 print("\nPatient activities ka order:")
 
@@ -211,7 +211,7 @@ print(average_times.to_string(index=False))
 
 
 
-# Day 4: Patient Process Map using PM4Py
+#  Patient Process Map using PM4Py
 
 print("\nCreating Patient Process Map...")
 
