@@ -212,3 +212,25 @@ Activity-level deviation counts require separate validation.
 The reference pathway is illustrative and is not a clinically
 approved standard. Differences do not automatically indicate
 clinical errors.
+### Validation Results
+
+The patient-level conformance results were checked for record counts
+and patient ID quality.
+
+- Total patient journeys: 100
+- Exact pathway matches: 27
+- Journeys differing from the reference pathway: 73
+- Duplicate patient IDs: 0
+- Missing patient IDs: 0
+
+Additional activity counts were independently checked against the
+patient-level conformance results:
+
+- Lab Test: 73 patient journeys
+- Lab Results Review: 73 patient journeys
+- Repeat Lab Test: 6 patient journeys
+- Missing activities recorded: None
+
+These checks support the consistency of the reported counts.
+The results describe differences from an illustrative reference
+pathway and do not establish clinical errors.
