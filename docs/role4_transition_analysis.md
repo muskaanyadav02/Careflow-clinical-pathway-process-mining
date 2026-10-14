@@ -189,3 +189,26 @@ Additional activities are activities that do not appear in the illustrative path
 The first-difference pattern identifies a difference in sequence, not a confirmed operational or clinical problem.
 
 Further investigation and an approved clinical pathway would be required to assess the significance of these differences.
+## 12. Validation of Conformance Results
+
+### Objective
+Validate the patient-level conformance results against the deviation summary.
+
+### Validation Checks
+- Total patient records: 100
+- Exact pathway matches: 27
+- Journeys differing from the reference pathway: 73
+- Duplicate patient IDs: 0
+- Missing patient IDs: 0
+
+### Validation Outcome
+The patient-level record count and exact-match counts agree with
+the deviation summary. No duplicate or missing patient IDs were
+found in the checked results.
+
+### Limitation
+This validation checks record counts and patient ID quality.
+Activity-level deviation counts require separate validation.
+The reference pathway is illustrative and is not a clinically
+approved standard. Differences do not automatically indicate
+clinical errors.
