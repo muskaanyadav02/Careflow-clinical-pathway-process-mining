@@ -6,7 +6,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = PROJECT_ROOT / "data" / "sample" / "sample_event_log.csv"
 
 print("Project root:", PROJECT_ROOT)
-print("CSV path:", DATA_FILE)
+print("CSV path:", DATA_FILE) 
 print("File exists:", DATA_FILE.exists())
 
 if DATA_FILE.exists():

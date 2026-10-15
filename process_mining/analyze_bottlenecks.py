@@ -98,7 +98,7 @@ import matplotlib.pyplot as plt
 top = average_times.head(10)
 
 # Create chart
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(12, 8))
 
 plt.bar(
     range(len(top)),
@@ -119,7 +119,9 @@ plt.title("Top 10 Potential Bottlenecks")
 # Save chart 
 CHART_FILE = PROJECT_ROOT / "data" / "processed" / "top_bottlenecks.png"
 
-plt.savefig(CHART_FILE, dpi=150)
+plt.tight_layout()
+plt.subplots_adjust(bottom=0.40)
+plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
 plt.show()
 
 print("Chart saved:", CHART_FILE)
