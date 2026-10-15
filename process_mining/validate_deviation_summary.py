@@ -107,10 +107,29 @@ assert actual_additional == expected_additional, (
     "Additional-activity counts do not match the patient-level results."
 )
 
-# 5. Confirm all summary counts are valid
+# 5. Validate first-difference counts
+first_difference_count = results["First_Difference"].notna().sum()
+
+expected_difference_count = different_journeys
+
+assert first_difference_count == expected_difference_count, (
+    "First-difference count does not match different journeys."
+)
+
+first_difference_row = summary[
+    summary["Category"].astype(str).str.startswith("First Difference")
+]
+
+assert len(first_difference_row) == 1, (
+    "Missing or duplicate first-difference summary."
+)
+
+assert int(first_difference_row["Patient_Count"].iloc[0]) == first_difference_count, (
+    "First-difference summary count does not match detailed results."
+)
+# 6. Confirm all summary counts are valid
 if (summary["Patient_Count"] < 0).any():
     raise ValueError("Negative patient counts found.")
 
-print("\nAll validation checks passed!")
-print("Overall counts match the patient-level results.")
-print("Additional-activity counts match the patient-level results.")
+print(f"Journeys with a first difference: {first_difference_count}")
+print("First-difference validation passed!")
