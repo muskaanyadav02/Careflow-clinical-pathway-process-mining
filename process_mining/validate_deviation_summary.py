@@ -133,3 +133,29 @@ if (summary["Patient_Count"] < 0).any():
 
 print(f"Journeys with a first difference: {first_difference_count}")
 print("First-difference validation passed!")
+# 7. Validate missing-activity counts
+missing_activity_count = (
+    results["Missing_Activities"]
+    .fillna("")
+    .astype(str)
+    .str.strip()
+    .ne("")
+    .sum()
+)
+
+missing_summary = summary[
+    summary["Category"] == "Missing Activity"
+]
+
+if missing_summary.empty:
+    assert missing_activity_count == 0, (
+        "Patient-level missing activities exist, "
+        "but the summary has no missing-activity rows."
+    )
+else:
+    assert int(missing_summary["Patient_Count"].sum()) == missing_activity_count, (
+        "Missing-activity counts do not match the summary."
+    )
+
+print(f"Journeys with missing activities: {missing_activity_count}")
+print("Missing-activity validation passed!")
