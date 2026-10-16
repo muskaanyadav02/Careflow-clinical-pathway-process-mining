@@ -6,7 +6,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = PROJECT_ROOT / "data" / "sample" / "sample_event_log.csv"
 
 # Load data
-df = pd.read_csv(DATA_FILE)
+df = pd.read_csv(DATA_FILE)   
 
 # Prepare event log
 df["Timestamp"] = pd.to_datetime(
@@ -125,4 +125,5 @@ plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
 plt.show()
 
 print("Chart saved:", CHART_FILE)
+
 

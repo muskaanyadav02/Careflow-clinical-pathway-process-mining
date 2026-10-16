@@ -15,7 +15,7 @@ if DATA_FILE.exists():
 
 print("Dataset shape:", df.shape)
 print("\nColumn names:")
-print(df.columns.tolist())
+print(df.columns.tolist())   
 
 print("\nData types:")
 print(df.dtypes)
@@ -248,3 +248,18 @@ pm4py.view_dfg(
     start_activities,
     end_activities
 ) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
