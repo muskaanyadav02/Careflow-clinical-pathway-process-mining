@@ -3,7 +3,8 @@ import pandas as pd
 import pm4py
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_FILE = PROJECT_ROOT / "data" / "sample" / "sample_event_log.csv"
+DATA_FILE = PROJECT_ROOT / "data" / "raw" / "hospital_event_log_full.csv"
+
 
 print("Project root:", PROJECT_ROOT)
 print("CSV path:", DATA_FILE) 
