@@ -3,7 +3,7 @@ import pandas as pd
 
 # Project path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_FILE = PROJECT_ROOT / "data" / "sample" / "sample_event_log.csv"
+DATA_FILE = PROJECT_ROOT / "data" / "raw" / "hospital_event_log_full.csv"
 
 # Load data
 df = pd.read_csv(DATA_FILE)   
@@ -102,7 +102,12 @@ plt.figure(figsize=(12, 8))
 
 plt.bar(
     range(len(top)),
-    top["Average_Time_Minutes"]
+    top["Average_Time_Minutes"],
+    color="#FFD580",
+    edgecolor="#0f3c5a",
+     linewidth=1.5,           
+    width=0.6,             
+    alpha=0.85 
 )
 
 plt.xticks(
