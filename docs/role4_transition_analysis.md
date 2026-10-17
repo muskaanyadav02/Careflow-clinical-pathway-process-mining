@@ -234,3 +234,39 @@ patient-level conformance results:
 These checks support the consistency of the reported counts.
 The results describe differences from an illustrative reference
 pathway and do not establish clinical errors.
+## 13. Deviation Summary Validation
+
+### Objective
+Validate that the deviation summary accurately represents the patient-level conformance results.
+
+### Validation Checks
+The validation script checks:
+- Required columns and patient identifiers.
+- Duplicate patient IDs.
+- Exact-match and differing-journey counts.
+- Overall summary counts against patient-level results.
+- Additional-activity counts.
+- First-difference counts.
+- Missing-activity counts.
+- Consistency of journeys marked as exact matches.
+
+### Results
+Validation was performed on 100 patient journeys.
+
+- Exact pathway matches: 27
+- Journeys differing from the illustrative pathway: 73
+- Journeys with a first difference: 73
+- Journeys with missing activities: 0
+
+All validation checks passed on the current sample results.
+
+### How to Run
+From the project root directory, run:
+
+`py process_mining/validate_deviation_summary.py`
+
+### Limitations
+The validation checks data consistency and summary accuracy.
+They do not establish whether a pathway difference is a clinical
+error. The expected pathway remains illustrative and requires
+validation against an approved clinical standard.
