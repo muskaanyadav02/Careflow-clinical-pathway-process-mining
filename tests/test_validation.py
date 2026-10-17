@@ -1,6 +1,4 @@
 
-from pathlib import Path
-
 import pandas as pd
 
 from scripts.validate_data import validate_event_log
@@ -73,3 +71,29 @@ def test_duplicate_event_is_detected(tmp_path):
     errors, _ = validate_event_log(file_path)
 
     assert any("duplicate events" in error for error in errors)
+
+
+def test_missing_required_value_is_detected(tmp_path):
+    data = {
+        "Case_ID": ["P001"],
+        "Activity_Name": [""],
+        "Timestamp": ["2026-10-01 08:00:00"],
+    }
+
+    file_path = create_test_csv(tmp_path, data)
+    errors, _ = validate_event_log(file_path)
+
+    assert errors, "Expected an error for a missing required value"
+
+
+def test_empty_dataset_is_detected(tmp_path):
+    data = {
+        "Case_ID": [],
+        "Activity_Name": [],
+        "Timestamp": [],
+    }
+
+    file_path = create_test_csv(tmp_path, data)
+    errors, _ = validate_event_log(file_path)
+
+    assert errors, "Expected an error for an empty dataset"
