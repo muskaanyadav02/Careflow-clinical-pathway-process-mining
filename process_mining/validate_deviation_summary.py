@@ -50,6 +50,35 @@ different_journeys = (
 assert exact_matches + different_journeys == len(results), (
     "Some journeys have an invalid Exact_Match value."
 )
+# Validate exact-match journey consistency
+exact_match_flags = (
+    results["Exact_Match"]
+    .astype(str)
+    .str.strip()
+    .str.lower()
+)
+
+invalid_flags = ~exact_match_flags.isin(["true", "false"])
+
+if invalid_flags.any():
+    raise ValueError("Invalid Exact_Match values found.")
+
+exact_match_rows = exact_match_flags.eq("true")
+
+inconsistent_exact_matches = results.loc[
+    exact_match_rows
+    & (
+        results["Additional_Activities"].fillna("").astype(str).str.strip().ne("")
+        | results["Missing_Activities"].fillna("").astype(str).str.strip().ne("")
+    )
+]
+
+if not inconsistent_exact_matches.empty:
+    raise ValueError(
+        "Exact-match journeys contain missing or additional activities."
+    )
+
+print("Exact-match consistency validation passed!")
 
 print(f"Patient-level records: {len(results)}")
 print(f"Exact matches: {exact_matches}")
