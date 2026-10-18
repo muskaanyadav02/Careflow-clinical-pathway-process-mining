@@ -157,8 +157,21 @@ assert int(first_difference_row["Patient_Count"].iloc[0]) == first_difference_co
     "First-difference summary count does not match detailed results."
 )
 # 6. Confirm all summary counts are valid
-if (summary["Patient_Count"] < 0).any():
+summary_counts = pd.to_numeric(
+    summary["Patient_Count"],
+    errors="coerce"
+)
+
+if summary_counts.isna().any():
+    raise ValueError("Missing or invalid patient counts found.")
+
+if (summary_counts < 0).any():
     raise ValueError("Negative patient counts found.")
+
+if (summary_counts % 1 != 0).any():
+    raise ValueError("Fractional patient counts found.")
+
+print("Summary count validation passed!")
 
 print(f"Journeys with a first difference: {first_difference_count}")
 print("First-difference validation passed!")
