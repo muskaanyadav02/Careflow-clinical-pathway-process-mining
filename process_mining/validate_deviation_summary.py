@@ -11,6 +11,21 @@ if not results_file.exists() or not summary_file.exists():
 results = pd.read_csv(results_file)
 summary = pd.read_csv(summary_file)
 
+# Validate that input files contain records
+if results.empty:
+    raise ValueError("Conformance results contain no patient records.")
+
+if summary.empty:
+    raise ValueError("Deviation summary contains no records.")
+
+print("Input file record validation passed!")
+# Check whether the required files exist
+if not results_file.exists() or not summary_file.exists():
+    raise FileNotFoundError("Required analysis output file not found.")
+
+results = pd.read_csv(results_file)
+summary = pd.read_csv(summary_file)
+
 print("===== DEVIATION SUMMARY VALIDATION =====")
 
 # 1. Validate the patient-level results
