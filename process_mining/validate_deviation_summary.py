@@ -152,10 +152,16 @@ assert actual_additional == expected_additional, (
 )
 
 # 5. Validate first-difference counts
-first_difference_count = results["First_Difference"].notna().sum()
+first_difference_values = (
+    results["First_Difference"]
+    .fillna("")
+    .astype(str)
+    .str.strip()
+)
+
+first_difference_count = first_difference_values.ne("").sum()
 
 expected_difference_count = different_journeys
-
 assert first_difference_count == expected_difference_count, (
     "First-difference count does not match different journeys."
 )
