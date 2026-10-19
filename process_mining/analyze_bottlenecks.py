@@ -68,7 +68,7 @@ print("\n===== TOP 3 POTENTIAL BOTTLENECKS =====")
 print(
     average_times.head(3).round(2).to_string(index=False)
 )
-
+    
 # Save analysis
 OUTPUT_FILE = (
     PROJECT_ROOT / "data" / "processed" / "transition_analysis.csv"

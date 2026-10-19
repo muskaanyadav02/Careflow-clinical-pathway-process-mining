@@ -19,7 +19,7 @@ print("\nColumn names:")
 print(df.columns.tolist())   
 
 print("\nData types:")
-print(df.dtypes)
+print(df.dtypes)    
 
 print("\nFirst 10 rows:")
 print(df.head(10))
