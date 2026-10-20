@@ -70,3 +70,31 @@ The validated event log can be loaded into BigQuery and used for transition-time
 ## 8. Limitations
 
 The dataset is simulated. Time differences between activities are not necessarily confirmed clinical waiting times and should be interpreted as process-analysis indicators.
+## 9. BigQuery Data Verification — 20 October 2026
+
+### Table Details
+
+- **Google Cloud project:** `eastern-concord-511514-t3`
+- **Dataset:** `careflow`
+- **Table:** `hospital_event_log`
+- **Location:** `asia-south1` (Mumbai)
+- **Schema:** `Case_ID`, `Activity_Name`, `Timestamp`
+
+### Verification Results
+
+| Check | Result |
+|---|---:|
+| Total events | 10,263 |
+| Unique cases | 1,500 |
+| Distinct activities | 8 |
+| Missing case IDs | 0 |
+| Missing activity names | 0 |
+| Missing timestamps | 0 |
+| Duplicate event records | 0 |
+| Out-of-order events | 0 |
+
+### Validation Summary
+
+The BigQuery table was manually verified using SQL queries. The checks confirmed that the required fields contain no missing values, no duplicate event records were returned, and no out-of-order timestamps were detected within individual cases.
+
+These results describe the current state of the BigQuery table and do not, by themselves, establish automated ingestion or continuous synchronization.
