@@ -1,13 +1,36 @@
 import pandas as pd
+from pathlib import Path
 
-# Load the dataset
-df = pd.read_csv("data/sample/sample_event_log.csv")
+# Load and validate the event log
+input_file = Path("data/sample/sample_event_log.csv")
 
-# Convert timestamps
-df["Timestamp"] = pd.to_datetime(df["Timestamp"])
+if not input_file.exists():
+    raise FileNotFoundError(
+        f"Event log not found: {input_file}"
+    )
 
-# Sort activities for each patient
-df = df.sort_values(["Case_ID", "Timestamp"])
+df = pd.read_csv(input_file)
+
+if df.empty:
+    raise ValueError("The event log contains no records.")
+
+required_columns = {"Case_ID", "Activity_Name", "Timestamp"}
+missing_columns = required_columns - set(df.columns)
+
+if missing_columns:
+    raise ValueError(
+        f"Missing required columns: {sorted(missing_columns)}"
+    )
+
+if df[["Case_ID", "Activity_Name", "Timestamp"]].isna().any().any():
+    raise ValueError(
+        "The event log contains missing case IDs, activities, or timestamps."
+    )
+
+df["Timestamp"] = pd.to_datetime(
+    df["Timestamp"],
+    errors="raise"
+)
 
 # Identify previous and next activities
 df["Previous_Activity"] = df.groupby("Case_ID")["Activity_Name"].shift(1)
