@@ -10,7 +10,12 @@ if not input_file.exists():
         "Conformance results not found. Run conformance_check.py first."
     )
 
-df = pd.read_csv(input_file).fillna("")
+df = pd.read_csv(input_file)
+
+if df.empty:
+    raise ValueError(
+        "Conformance results are empty. Run conformance_check.py again."
+    )
 
 # Step 2: Check required columns
 required_columns = {
@@ -25,6 +30,14 @@ missing_columns = required_columns - set(df.columns)
 
 if missing_columns:
     raise ValueError(f"Missing columns: {sorted(missing_columns)}")
+# Validate case IDs
+if df["Case_ID"].replace(r"^\s*$", pd.NA, regex=True).isna().any():
+    raise ValueError(
+        "Conformance results contain missing or blank Case_ID values."
+    )
+
+# Prepare empty values for summary calculations
+df = df.fillna("")
 
 # Step 3: Calculate overall results
 total_patients = len(df)
