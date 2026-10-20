@@ -1,9 +1,18 @@
 import pandas as pd
 from pathlib import Path
 
-# Step 1: Load patient event data
+# Step 1: Load and validate patient event data
 file_path = Path("data/sample/sample_event_log.csv")
+
+if not file_path.exists():
+    raise FileNotFoundError(
+        f"Event log file not found: {file_path}"
+    )
+
 df = pd.read_csv(file_path)
+
+if df.empty:
+    raise ValueError("The event log is empty.")
 
 # Step 2: Validate required columns
 required_columns = {"Case_ID", "Activity_Name", "Timestamp"}
@@ -15,12 +24,26 @@ if missing_columns:
         f"Missing required columns: {sorted(missing_columns)}"
     )
 
-# Step 3: Clean and prepare the data
-df["Timestamp"] = pd.to_datetime(df["Timestamp"], errors="coerce")
+# Step 3: Validate and prepare the data
+for column in ["Case_ID", "Activity_Name", "Timestamp"]:
+    df[column] = df[column].replace(r"^\s*$", pd.NA, regex=True)
 
-df = df.dropna(
-    subset=["Case_ID", "Activity_Name", "Timestamp"]
+if df[["Case_ID", "Activity_Name", "Timestamp"]].isna().any().any():
+    raise ValueError(
+        "Event log contains missing or blank case IDs, "
+        "activity names, or timestamps."
+    )
+
+df["Timestamp"] = pd.to_datetime(
+    df["Timestamp"],
+    errors="coerce"
 )
+
+if df["Timestamp"].isna().any():
+    raise ValueError(
+        "Event log contains invalid timestamps. "
+        "Please correct them before running conformance analysis."
+    )
 
 df = df.sort_values(["Case_ID", "Timestamp"])
 
