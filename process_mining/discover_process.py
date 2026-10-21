@@ -25,14 +25,17 @@ if missing_columns:
     )
 
 # Step 3: Validate event data
-for column in ["Case_ID", "Activity_Name", "Timestamp"]:
+required_fields = ["Case_ID", "Activity_Name", "Timestamp"]
+
+for column in required_fields:
     df[column] = df[column].replace(r"^\s*$", pd.NA, regex=True)
 
-if df[["Case_ID", "Activity_Name", "Timestamp"]].isna().any().any():
+if df[required_fields].isna().any().any():
     raise ValueError(
         "The event log contains missing or blank required values."
     )
 
+# Parse timestamps and reject invalid values
 df["Timestamp"] = pd.to_datetime(
     df["Timestamp"],
     errors="coerce"
@@ -43,6 +46,19 @@ if df["Timestamp"].isna().any():
         "The event log contains invalid timestamps."
     )
 
+# Check for exact duplicate events
+duplicate_columns = ["Case_ID", "Activity_Name", "Timestamp"]
+
+duplicate_count = df.duplicated(
+    subset=duplicate_columns
+).sum()
+
+if duplicate_count > 0:
+    print(
+        f"WARNING: Found {duplicate_count} duplicate event records. "
+        "They will be retained for review."
+    )
+
 # Prepare the data for process mining
 df = df.rename(columns={
     "Case_ID": "case:concept:name",
@@ -50,8 +66,12 @@ df = df.rename(columns={
     "Timestamp": "time:timestamp"
 })
 
-# Sort events by patient and time
-df = df.sort_values(["case:concept:name", "time:timestamp"])
+# Sort events by patient and timestamp
+df = df.sort_values(
+    ["case:concept:name", "time:timestamp"],
+    kind="stable"
+).reset_index(drop=True)
+
 # Step 4: Discover the process model
 event_log = pm4py.format_dataframe(
     df,
