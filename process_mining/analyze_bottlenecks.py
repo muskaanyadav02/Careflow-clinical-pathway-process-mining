@@ -27,11 +27,15 @@ if df[["Case_ID", "Activity_Name", "Timestamp"]].isna().any().any():
         "The event log contains missing case IDs, activities, or timestamps."
     )
 
-df["Timestamp"] = pd.to_datetime(
-    df["Timestamp"],
-    errors="raise"
-)
+for column in ["Case_ID", "Activity_Name", "Timestamp"]:
+    df[column] = df[column].replace(r"^\s*$", pd.NA, regex=True)
 
+if df[["Case_ID", "Activity_Name", "Timestamp"]].isna().any().any():
+    raise ValueError("The event log contains blank required values.")
+
+df["Timestamp"] = pd.to_datetime(df["Timestamp"], errors="raise")
+
+df = df.sort_values(["Case_ID", "Timestamp"]).reset_index(drop=True)
 # Identify previous and next activities
 df["Previous_Activity"] = df.groupby("Case_ID")["Activity_Name"].shift(1)
 
