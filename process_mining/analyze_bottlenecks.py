@@ -93,7 +93,14 @@ results.columns = [
 ]
 
 # Display the three longest transitions
+# Save all transition statistics
+output_file = Path("data/processed/bottleneck_summary.csv")
+output_file.parent.mkdir(parents=True, exist_ok=True)
+
+results.round(2).to_csv(output_file)
+
 print("\n===== CAREFLOW: TOP 3 LONGEST TRANSITIONS =====\n")
 print(results.head(3).round(2).to_string())
 
+print(f"\nFull bottleneck report saved to: {output_file}")
 print("\n===== ANALYSIS COMPLETED =====")
