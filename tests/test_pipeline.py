@@ -107,3 +107,24 @@ def test_pipeline_runs_end_to_end(tmp_path):
 
     assert quality_report["total_events"] > 0
     assert quality_report["unique_cases"] == 10
+
+def test_pipeline_rejects_zero_cases(monkeypatch):
+    import sys
+
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["run_pipeline.py", "--cases", "0"],
+    )
+
+    def unexpected_run(*args, **kwargs):
+        raise AssertionError("Pipeline should not run with zero cases")
+
+    monkeypatch.setattr(run_pipeline.subprocess, "run", unexpected_run)
+
+    try:
+        run_pipeline.main()
+    except SystemExit as exc:
+        assert exc.code == 2
+    else:
+        raise AssertionError("Pipeline should reject zero cases")
