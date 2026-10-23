@@ -85,14 +85,10 @@ print("\nAnalysis saved to:", OUTPUT_FILE)
 print("\nBottleneck analysis completed!")
 
 
-
-
 import matplotlib
 matplotlib.rcParams["font.family"] = "DejaVu Sans"
 matplotlib.rcParams["font.enable_last_resort"] = False
-
 import matplotlib.pyplot as plt
-
 
 # Select top 10 transitions
 top = average_times.head(10)

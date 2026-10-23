@@ -34,6 +34,7 @@ import pm4py
 # Create a separate working copy
 event_log = df.copy()
 
+
 # Convert timestamps
 event_log["Timestamp"] = pd.to_datetime(
     event_log["Timestamp"],
@@ -73,7 +74,6 @@ activity_counts = (
 print(activity_counts)
 
 
-
 # Patient activities order
 # ==========================================
 # PROCESS DISCOVERY
@@ -98,9 +98,6 @@ print("\nWhich activities is Hapenning  more:")
 activity_count = event_log["concept:name"].value_counts()
 
 print(activity_count)
-
-
-
 
 # Where the paitent goes to after one activity
 
@@ -131,8 +128,6 @@ for patient_id, patient_data in event_log.groupby("case:concept:name"):
 transition_count = pd.Series(transitions).value_counts()
 
 print(transition_count.head(10))
-
-
 
 
 # Calculate time between activities
@@ -171,8 +166,6 @@ print(
     ].head(10)
 )
 
-
-
 # Calculate time between two activities
 
 event_log["Next_Timestamp"] = (
@@ -191,7 +184,6 @@ print(event_log[[
     "Waiting_Time_Minutes"]].head(10))
 
 
-    
 
 print("\n--- Average Time Between Activities ---")
 
@@ -211,8 +203,6 @@ average_times = average_times.sort_values(
 print(average_times.to_string(index=False))
 
 
-
-
 #  Patient Process Map using PM4Py
 
 print("\nCreating Patient Process Map...")
@@ -222,10 +212,7 @@ event_log["time:timestamp"] = pd.to_datetime(
     event_log["time:timestamp"]
 )
 
-
-
-
-# Create Event Log
+#Create Event Log
 
 import os
 os.environ["PATH"] += os.pathsep + r"C:\Program Files\Graphviz\bin"
