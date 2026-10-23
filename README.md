@@ -55,3 +55,16 @@ Install dependencies:
 
 ```bash
 py -m pip install -r requirements.txt
+Additional Completed Work
+
+- Added input validation for event logs and patient identifiers.
+- Generated bottleneck summary and deviation reports.
+- Discovered the patient process tree using PM4Py and exported its visualization.
+- Added automated tests for process mining outputs and input validation.
+- Verified that all 9 currently implemented tests pass.
+
+Current Pending Work
+
+- Complete testing for data generation and other remaining modules.
+- Coordinate integration testing with the team on a separate testing branch.
+- Confirm the expected clinical pathway with the project team before treating deviations as compliance failures.
