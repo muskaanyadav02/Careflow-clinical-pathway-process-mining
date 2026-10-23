@@ -35,7 +35,6 @@ if df[required_fields].isna().any().any():
         "The event log contains missing or blank required values."
     )
 
-# Parse timestamps and reject invalid values
 df["Timestamp"] = pd.to_datetime(
     df["Timestamp"],
     errors="coerce"
@@ -46,33 +45,29 @@ if df["Timestamp"].isna().any():
         "The event log contains invalid timestamps."
     )
 
-# Check for exact duplicate events
+# Check for duplicate events without deleting them
 duplicate_columns = ["Case_ID", "Activity_Name", "Timestamp"]
+duplicate_count = df.duplicated(subset=duplicate_columns).sum()
 
-duplicate_count = df.duplicated(
-    subset=duplicate_columns
-).sum()
-
-if duplicate_count > 0:
+if duplicate_count:
     print(
         f"WARNING: Found {duplicate_count} duplicate event records. "
         "They will be retained for review."
     )
 
-# Prepare the data for process mining
+# Prepare data for process mining
 df = df.rename(columns={
     "Case_ID": "case:concept:name",
     "Activity_Name": "concept:name",
     "Timestamp": "time:timestamp"
 })
 
-# Sort events by patient and timestamp
 df = df.sort_values(
     ["case:concept:name", "time:timestamp"],
     kind="stable"
 ).reset_index(drop=True)
 
-# Step 4: Discover the process model
+# Step 4: Discover the process tree
 event_log = pm4py.format_dataframe(
     df,
     case_id="case:concept:name",
@@ -82,13 +77,25 @@ event_log = pm4py.format_dataframe(
 
 process_tree = pm4py.discover_process_tree_inductive(event_log)
 
-# Step 5: Display the results
+# Step 5: Export the process tree visualization
+output_dir = Path("data/processed")
+output_dir.mkdir(parents=True, exist_ok=True)
+
+visualization_file = output_dir / "discovered_process_tree.png"
+
+pm4py.save_vis_process_tree(
+    process_tree,
+    str(visualization_file)
+)
+
+# Step 6: Display results
 print("\n===== CAREFLOW PROCESS DISCOVERY =====")
-print("Total patient records:", len(df))
+print("Total event records:", len(df))
 print("Unique patients:", df["case:concept:name"].nunique())
 print("Unique activities:", df["concept:name"].nunique())
 
 print("\nDiscovered Process Tree:")
 print(process_tree)
 
+print(f"\nProcess visualization saved to: {visualization_file}")
 print("\n===== PROCESS DISCOVERY COMPLETED =====")
