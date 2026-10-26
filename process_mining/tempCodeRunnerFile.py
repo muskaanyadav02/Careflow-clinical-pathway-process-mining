@@ -1,0 +1,1 @@
+print("Raw records:", len(df))

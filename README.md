@@ -67,3 +67,6 @@ The project is developed collaboratively using Git and GitHub. Team members cont
 ## Disclaimer
 
 The results are based on simulated data and should not be interpreted as evidence of actual hospital performance or clinical outcomes.
+### Role 2 Status Update 
+- Process Mining pipeline scaled to full hospital raw dataset.
+- Enhanced designer bottleneck visualization generated successfully.

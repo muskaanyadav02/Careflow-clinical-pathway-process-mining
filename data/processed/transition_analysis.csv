@@ -1,0 +1,11 @@
+From_Activity,To_Activity,Average_Time_Minutes,Patient_Transitions
+Triage,Doctor Consultation,46.370666666666665,1500
+Lab Results Review,Doctor Consultation,44.93390804597701,348
+Lab Test,Repeat Lab Test,40.758865248226954,141
+Doctor Consultation,Lab Test,35.45118733509235,1137
+Repeat Lab Test,Lab Results Review,28.425531914893618,141
+Doctor Consultation,Treatment,28.0210970464135,711
+Lab Test,Lab Results Review,27.62550200803213,996
+Lab Results Review,Treatment,27.59315589353612,789
+Treatment,Discharge,17.633333333333333,1500
+Patient Registration,Triage,12.33,1500
