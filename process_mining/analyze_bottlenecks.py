@@ -5,6 +5,7 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = PROJECT_ROOT / "data" / "raw" / "hospital_event_log_full.csv"
 
+
 # Load data
 df = pd.read_csv(DATA_FILE)   
 
@@ -41,24 +42,27 @@ transitions = df.dropna(
     subset=["Next_Activity", "Next_Timestamp"]
 ).copy()
 
-# Calculate average transition time
+# Calculate average transition time (Correction: Added median and max for Streamlit compliance)
 average_times = (
     transitions.groupby(
         ["Activity_Name", "Next_Activity"]
     )["Transition_Time_Minutes"]
-    .agg(["mean", "count"])
+    .agg(["mean", "count", "median", "max"])
     .reset_index()
 )
 
+# Correction: Named all 6 expected columns exactly as required by Member 3
 average_times.columns = [
-    "From_Activity",
-    "To_Activity",
-    "Average_Time_Minutes",
-    "Patient_Transitions"
+    "from_activity", 
+    "to_activity", 
+    "average_time_minutes", 
+    "transition_count",
+    "median_time_minutes",
+    "maximum_time_minutes"
 ]
 
 average_times = average_times.sort_values(
-    "Average_Time_Minutes",
+    "average_time_minutes",
     ascending=False
 )
 
@@ -71,7 +75,7 @@ print(
     
 # Save analysis
 OUTPUT_FILE = (
-    PROJECT_ROOT / "data" / "processed" / "transition_analysis.csv"
+    PROJECT_ROOT / "data" / "processed" / "bottleneck_summary.csv"
 )
 
 OUTPUT_FILE.parent.mkdir(
@@ -98,7 +102,7 @@ plt.figure(figsize=(12, 8))
 
 plt.bar(
     range(len(top)),
-    top["Average_Time_Minutes"],
+    top["average_time_minutes"],
     color="#FFD580",
     edgecolor="#0f3c5a",
      linewidth=1.5,           
@@ -106,9 +110,10 @@ plt.bar(
     alpha=0.85 
 )
 
+####
 plt.xticks(
     range(len(top)),
-    top["From_Activity"] + " to " + top["To_Activity"],
+    top["from_activity"] + " to " + top["to_activity"],
     rotation=45,
     ha="right"
 )
@@ -126,5 +131,3 @@ plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
 plt.show()
 
 print("Chart saved:", CHART_FILE)
-
-

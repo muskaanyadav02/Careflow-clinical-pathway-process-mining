@@ -76,9 +76,6 @@ print(activity_counts)
 
 # Patient activities order
 # ==========================================
-# PROCESS DISCOVERY
-# ==========================================
-
 print("\n==========  PROCESS DISCOVERY ==========")
 
 print("\nPatient activities ka order:")
