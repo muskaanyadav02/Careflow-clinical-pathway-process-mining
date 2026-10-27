@@ -1,8 +1,8 @@
-import pandas as pd
+﻿import pandas as pd
 from pathlib import Path
 
 # Step 1: Load and validate patient event data
-file_path = Path("data/sample/sample_event_log.csv")
+file_path = Path("data/raw/hospital_event_log_full.csv")
 
 if not file_path.exists():
     raise FileNotFoundError(
