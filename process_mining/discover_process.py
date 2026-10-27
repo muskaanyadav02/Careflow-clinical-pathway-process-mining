@@ -249,3 +249,10 @@ pm4py.view_dfg(
 
 
 
+<<<<<<< HEAD
+=======
+print(f"\nProcess visualization saved to: {visualization_file}")
+print("\n===== PROCESS DISCOVERY COMPLETED =====")
+
+
+>>>>>>> 8723932 (Run process mining analyses on full hospital event log)

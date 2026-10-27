@@ -94,6 +94,7 @@ matplotlib.rcParams["font.family"] = "DejaVu Sans"
 matplotlib.rcParams["font.enable_last_resort"] = False
 import matplotlib.pyplot as plt
 
+<<<<<<< HEAD
 # Select top 10 transitions
 top = average_times.head(10)
 
@@ -131,3 +132,9 @@ plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
 plt.show()
 
 print("Chart saved:", CHART_FILE)
+=======
+print(f"\nFull bottleneck report saved to: {output_file}")
+print("\n===== ANALYSIS COMPLETED =====")
+
+
+>>>>>>> 8723932 (Run process mining analyses on full hospital event log)
