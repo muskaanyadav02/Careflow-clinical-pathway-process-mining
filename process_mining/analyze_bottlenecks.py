@@ -5,7 +5,6 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = PROJECT_ROOT / "data" / "raw" / "hospital_event_log_full.csv"
 
-
 # Load data
 df = pd.read_csv(DATA_FILE)   
 
@@ -42,27 +41,24 @@ transitions = df.dropna(
     subset=["Next_Activity", "Next_Timestamp"]
 ).copy()
 
-# Calculate average transition time (Correction: Added median and max for Streamlit compliance)
+# Calculate average transition time
 average_times = (
     transitions.groupby(
         ["Activity_Name", "Next_Activity"]
     )["Transition_Time_Minutes"]
-    .agg(["mean", "count", "median", "max"])
+    .agg(["mean", "count"])
     .reset_index()
 )
 
-# Correction: Named all 6 expected columns exactly as required by Member 3
 average_times.columns = [
-    "from_activity", 
-    "to_activity", 
-    "average_time_minutes", 
-    "transition_count",
-    "median_time_minutes",
-    "maximum_time_minutes"
+    "From_Activity",
+    "To_Activity",
+    "Average_Time_Minutes",
+    "Patient_Transitions"
 ]
 
 average_times = average_times.sort_values(
-    "average_time_minutes",
+    "Average_Time_Minutes",
     ascending=False
 )
 
@@ -75,7 +71,7 @@ print(
     
 # Save analysis
 OUTPUT_FILE = (
-    PROJECT_ROOT / "data" / "processed" / "bottleneck_summary.csv"
+    PROJECT_ROOT / "data" / "processed" / "transition_analysis.csv"
 )
 
 OUTPUT_FILE.parent.mkdir(
@@ -94,7 +90,6 @@ matplotlib.rcParams["font.family"] = "DejaVu Sans"
 matplotlib.rcParams["font.enable_last_resort"] = False
 import matplotlib.pyplot as plt
 
-<<<<<<< HEAD
 # Select top 10 transitions
 top = average_times.head(10)
 
@@ -103,7 +98,7 @@ plt.figure(figsize=(12, 8))
 
 plt.bar(
     range(len(top)),
-    top["average_time_minutes"],
+    top["Average_Time_Minutes"],
     color="#FFD580",
     edgecolor="#0f3c5a",
      linewidth=1.5,           
@@ -111,10 +106,9 @@ plt.bar(
     alpha=0.85 
 )
 
-####
 plt.xticks(
     range(len(top)),
-    top["from_activity"] + " to " + top["to_activity"],
+    top["From_Activity"] + " to " + top["To_Activity"],
     rotation=45,
     ha="right"
 )
@@ -132,9 +126,5 @@ plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
 plt.show()
 
 print("Chart saved:", CHART_FILE)
-=======
-print(f"\nFull bottleneck report saved to: {output_file}")
-print("\n===== ANALYSIS COMPLETED =====")
 
 
->>>>>>> 8723932 (Run process mining analyses on full hospital event log)
