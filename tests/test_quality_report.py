@@ -124,3 +124,26 @@ def test_quality_report_is_saved_as_json(tmp_path):
 
     assert saved_report["status"] == "PASSED"
     assert saved_report["total_events"] == 1
+
+
+def test_quality_report_detects_chronological_violation(tmp_path):
+    input_file = tmp_path / "events.csv"
+
+    pd.DataFrame({
+        "Case_ID": ["P00001", "P00001", "P00001"],
+        "Activity_Name": [
+            "Patient Registration",
+            "Triage",
+            "Discharge",
+        ],
+        "Timestamp": [
+            "2026-10-01 08:00:00",
+            "2026-10-01 08:30:00",
+            "2026-10-01 08:15:00",
+        ],
+    }).to_csv(input_file, index=False)
+
+    report = generate_quality_report(input_file)
+
+    assert report["chronological_violations"] == 1
+    assert report["status"] == "FAILED"
