@@ -147,3 +147,20 @@ def test_quality_report_detects_chronological_violation(tmp_path):
 
     assert report["chronological_violations"] == 1
     assert report["status"] == "FAILED"
+
+def test_quality_report_detects_duplicate_events(tmp_path):
+    input_file = tmp_path / "events.csv"
+
+    pd.DataFrame({
+        "Case_ID": ["P00001", "P00001"],
+        "Activity_Name": ["Triage", "Triage"],
+        "Timestamp": [
+            "2026-10-01 08:00:00",
+            "2026-10-01 08:00:00",
+        ],
+    }).to_csv(input_file, index=False)
+
+    report = generate_quality_report(input_file)
+
+    assert report["duplicate_events"] == 1
+    assert report["status"] == "FAILED"
