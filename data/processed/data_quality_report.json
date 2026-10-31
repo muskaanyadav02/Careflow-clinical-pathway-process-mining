@@ -1,0 +1,25 @@
+{
+  "input_file": "C:\\Users\\muska\\OneDrive\\Desktop\\CareFlow\\data\\raw\\hospital_event_log_full.csv",
+  "total_events": 10263,
+  "unique_cases": 1500,
+  "unique_activities": 8,
+  "activity_counts": {
+    "Doctor Consultation": 1848,
+    "Patient Registration": 1500,
+    "Triage": 1500,
+    "Treatment": 1500,
+    "Discharge": 1500,
+    "Lab Test": 1137,
+    "Lab Results Review": 1137,
+    "Repeat Lab Test": 141
+  },
+  "missing_values": {
+    "Case_ID": 0,
+    "Activity_Name": 0,
+    "Timestamp": 0
+  },
+  "duplicate_events": 0,
+  "invalid_timestamps": 0,
+  "chronological_violations": 0,
+  "status": "PASSED"
+}
