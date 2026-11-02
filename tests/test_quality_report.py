@@ -164,3 +164,23 @@ def test_quality_report_detects_duplicate_events(tmp_path):
 
     assert report["duplicate_events"] == 1
     assert report["status"] == "FAILED"
+
+def test_quality_report_detects_blank_and_whitespace_values(tmp_path):
+    input_file = tmp_path / "events.csv"
+
+    pd.DataFrame({
+        "Case_ID": ["P00001", "P00002", "P00003"],
+        "Activity_Name": ["Triage", "   ", "Discharge"],
+        "Timestamp": [
+            "2026-10-01 08:00:00",
+            "2026-10-01 08:15:00",
+            "2026-10-01 09:00:00",
+        ],
+    }).to_csv(input_file, index=False)
+
+    report = generate_quality_report(input_file)
+
+    assert report["missing_values"]["Activity_Name"] == 1
+    assert report["missing_values"]["Case_ID"] == 0
+    assert report["missing_values"]["Timestamp"] == 0
+    assert report["status"] == "FAILED"
