@@ -1,13 +1,27 @@
 from pathlib import Path
 import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
 
 # Project path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = PROJECT_ROOT / "data" / "raw" / "hospital_event_log_full.csv"
 
-
 # Load data
-df = pd.read_csv(DATA_FILE)   
+if not DATA_FILE.exists():
+    raise FileNotFoundError(f"Event log file not found: {DATA_FILE}")
+
+df = pd.read_csv(DATA_FILE)
+
+if df.empty:
+    raise ValueError("The event log is empty.")
+
+# Validate required columns
+required_columns = ["Case_ID", "Activity_Name", "Timestamp"]
+
+for column in required_columns:
+    if column not in df.columns:
+        raise ValueError(f"Required column missing: {column}")
 
 # Prepare event log
 df["Timestamp"] = pd.to_datetime(
@@ -32,7 +46,7 @@ df["Next_Timestamp"] = (
     df.groupby("Case_ID")["Timestamp"].shift(-1)
 )
 
-# Calculate time between activities in minutes
+# Calculate transition time in minutes
 df["Transition_Time_Minutes"] = (
     df["Next_Timestamp"] - df["Timestamp"]
 ).dt.total_seconds() / 60
@@ -42,7 +56,7 @@ transitions = df.dropna(
     subset=["Next_Activity", "Next_Timestamp"]
 ).copy()
 
-# Calculate average transition time (Correction: Added median and max for Streamlit compliance)
+# Calculate transition statistics
 average_times = (
     transitions.groupby(
         ["Activity_Name", "Next_Activity"]
@@ -51,16 +65,17 @@ average_times = (
     .reset_index()
 )
 
-# Correction: Named all 6 expected columns exactly as required by Member 3
+# Rename columns
 average_times.columns = [
-    "from_activity", 
-    "to_activity", 
-    "average_time_minutes", 
+    "from_activity",
+    "to_activity",
+    "average_time_minutes",
     "transition_count",
     "median_time_minutes",
     "maximum_time_minutes"
 ]
 
+# Sort by average transition time
 average_times = average_times.sort_values(
     "average_time_minutes",
     ascending=False
@@ -72,8 +87,8 @@ print("\n===== TOP 3 POTENTIAL BOTTLENECKS =====")
 print(
     average_times.head(3).round(2).to_string(index=False)
 )
-    
-# Save analysis
+
+# Save bottleneck analysis
 OUTPUT_FILE = (
     PROJECT_ROOT / "data" / "processed" / "bottleneck_summary.csv"
 )
@@ -86,19 +101,12 @@ OUTPUT_FILE.parent.mkdir(
 average_times.to_csv(OUTPUT_FILE, index=False)
 
 print("\nAnalysis saved to:", OUTPUT_FILE)
-print("\nBottleneck analysis completed!")
 
-
-import matplotlib
+# Create bottleneck chart
 matplotlib.rcParams["font.family"] = "DejaVu Sans"
-matplotlib.rcParams["font.enable_last_resort"] = False
-import matplotlib.pyplot as plt
 
-<<<<<<< HEAD
-# Select top 10 transitions
 top = average_times.head(10)
 
-# Create chart
 plt.figure(figsize=(12, 8))
 
 plt.bar(
@@ -106,12 +114,11 @@ plt.bar(
     top["average_time_minutes"],
     color="#FFD580",
     edgecolor="#0f3c5a",
-     linewidth=1.5,           
-    width=0.6,             
-    alpha=0.85 
+    linewidth=1.5,
+    width=0.6,
+    alpha=0.85
 )
 
-####
 plt.xticks(
     range(len(top)),
     top["from_activity"] + " to " + top["to_activity"],
@@ -123,18 +130,14 @@ plt.xlabel("Activity Transitions")
 plt.ylabel("Average Time (Minutes)")
 plt.title("Top 10 Potential Bottlenecks")
 
-# Save chart 
-CHART_FILE = PROJECT_ROOT / "data" / "processed" / "top_bottlenecks.png"
+CHART_FILE = (
+    PROJECT_ROOT / "data" / "processed" / "top_bottlenecks.png"
+)
 
 plt.tight_layout()
 plt.subplots_adjust(bottom=0.40)
 plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
-plt.show()
+plt.close()
 
-print("Chart saved:", CHART_FILE)
-=======
-print(f"\nFull bottleneck report saved to: {output_file}")
-print("\n===== ANALYSIS COMPLETED =====")
-
-
->>>>>>> 8723932 (Run process mining analyses on full hospital event log)
+print("\nChart saved to:", CHART_FILE)
+print("\n===== BOTTLENECK ANALYSIS COMPLETED =====")
