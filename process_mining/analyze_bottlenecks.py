@@ -3,11 +3,12 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 
-# Project path
+# Project paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = PROJECT_ROOT / "data" / "raw" / "hospital_event_log_full.csv"
+OUTPUT_DIR = PROJECT_ROOT / "data" / "processed"
 
-# Load data
+# Load and validate data
 if not DATA_FILE.exists():
     raise FileNotFoundError(f"Event log file not found: {DATA_FILE}")
 
@@ -16,7 +17,6 @@ df = pd.read_csv(DATA_FILE)
 if df.empty:
     raise ValueError("The event log is empty.")
 
-# Validate required columns
 required_columns = ["Case_ID", "Activity_Name", "Timestamp"]
 
 for column in required_columns:
@@ -83,24 +83,38 @@ average_times = average_times.sort_values(
 
 # Display top 3 potential bottlenecks
 print("\n===== TOP 3 POTENTIAL BOTTLENECKS =====")
+print(average_times.head(3).round(2).to_string(index=False))
 
-print(
-    average_times.head(3).round(2).to_string(index=False)
-)
+# Create output directory
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Save bottleneck analysis
-OUTPUT_FILE = (
-    PROJECT_ROOT / "data" / "processed" / "bottleneck_summary.csv"
-)
+# Save detailed bottleneck summary
+bottleneck_file = OUTPUT_DIR / "bottleneck_summary.csv"
+average_times.to_csv(bottleneck_file, index=False)
 
-OUTPUT_FILE.parent.mkdir(
-    parents=True,
-    exist_ok=True
-)
+print("\nBottleneck summary saved to:", bottleneck_file)
 
-average_times.to_csv(OUTPUT_FILE, index=False)
+# Save team-compatible transition analysis
+transition_report = average_times[
+    [
+        "from_activity",
+        "to_activity",
+        "average_time_minutes",
+        "transition_count"
+    ]
+].copy()
 
-print("\nAnalysis saved to:", OUTPUT_FILE)
+transition_report.columns = [
+    "From_Activity",
+    "To_Activity",
+    "Average_Time_Minutes",
+    "Patient_Transitions"
+]
+
+transition_file = OUTPUT_DIR / "transition_analysis.csv"
+transition_report.to_csv(transition_file, index=False)
+
+print("Transition analysis saved to:", transition_file)
 
 # Create bottleneck chart
 matplotlib.rcParams["font.family"] = "DejaVu Sans"
@@ -130,14 +144,12 @@ plt.xlabel("Activity Transitions")
 plt.ylabel("Average Time (Minutes)")
 plt.title("Top 10 Potential Bottlenecks")
 
-CHART_FILE = (
-    PROJECT_ROOT / "data" / "processed" / "top_bottlenecks.png"
-)
+CHART_FILE = OUTPUT_DIR / "top_bottlenecks.png"
 
 plt.tight_layout()
 plt.subplots_adjust(bottom=0.40)
 plt.savefig(CHART_FILE, dpi=150, bbox_inches="tight")
 plt.close()
 
-print("\nChart saved to:", CHART_FILE)
+print("Chart saved to:", CHART_FILE)
 print("\n===== BOTTLENECK ANALYSIS COMPLETED =====")
