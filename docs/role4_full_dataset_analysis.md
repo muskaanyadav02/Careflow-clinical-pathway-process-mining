@@ -28,6 +28,17 @@ Output files:
 
 - "data/processed/bottleneck_summary.csv"
 - "data/processed/top_bottlenecks.png"
+### Transition Data Validation
+
+Additional validation was implemented to improve the reliability of transition-time analysis.
+
+- Negative transition durations are detected and excluded.
+- Zero-duration transitions are counted and reported.
+- Valid transitions are counted before statistical analysis.
+- The updated analysis processed 576 valid transitions.
+- No negative or zero-duration transitions were found in the current dataset.
+
+This validation helps prevent invalid time intervals from affecting bottleneck statistics.
 
 4. Conformance Checking
 
