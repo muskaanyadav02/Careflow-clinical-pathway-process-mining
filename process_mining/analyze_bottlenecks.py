@@ -56,6 +56,24 @@ transitions = df.dropna(
     subset=["Next_Activity", "Next_Timestamp"]
 ).copy()
 
+# Validate transition durations
+negative_count = (
+    transitions["Transition_Time_Minutes"] < 0
+).sum()
+
+zero_count = (
+    transitions["Transition_Time_Minutes"] == 0
+).sum()
+
+# Exclude negative transition durations
+transitions = transitions[
+    transitions["Transition_Time_Minutes"] >= 0
+].copy()
+
+print("\n===== DATA VALIDATION =====")
+print("Negative durations excluded:", negative_count)
+print("Zero-duration transitions:", zero_count)
+print("Valid transitions analysed:", len(transitions))
 # Calculate transition statistics
 average_times = (
     transitions.groupby(
