@@ -1,0 +1,11 @@
+1. Data Standardization (Week 1): I consumed the raw hospital event logs, 
+   cleaned the missing records using Pandas, and standardized the column names 
+   to match the internal schema required by the PM4Py library.
+   
+2. Transition Time Analytics (Week 2): I implemented custom tracking logic 
+   using the .shift(-1) function to map individual patient paths and calculated 
+   the exact waiting duration in minutes between consecutive medical activities.
+
+3. Process Discovery (Week 2): I successfully generated the Directly-Followed 
+   Graph (DFG) model using PM4Py and created a visualization of the top 10 
+   delays, which was seamlessly integrated into our live Streamlit Dashboard."

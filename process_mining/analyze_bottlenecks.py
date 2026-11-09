@@ -26,7 +26,7 @@ df = df.sort_values(
 df["Next_Activity"] = (
     df.groupby("Case_ID")["Activity_Name"].shift(-1)
 )
-
+  
 df["Next_Timestamp"] = (
     df.groupby("Case_ID")["Timestamp"].shift(-1)
 )

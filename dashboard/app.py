@@ -289,7 +289,7 @@ def load_data():
     transitions = pd.read_csv(BOTTLENECK_FILE)
 
     return quality, activities, transitions
-
+      
 
 if not all(p.exists() for p in [QUALITY_FILE, ACTIVITY_FILE, BOTTLENECK_FILE]):
     st.error(

@@ -1,1 +1,3 @@
-print("Raw records:", len(df))
+
+print("Project root:", PROJECT_ROOT)
+print("CSV path:", DATA_FILE) 
