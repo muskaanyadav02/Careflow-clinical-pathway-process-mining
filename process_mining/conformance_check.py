@@ -88,8 +88,8 @@ conformance_records = []
 for index, row in patient_paths.iterrows():
     case_id = row["case:concept:name"]
     actual_path = row["concept:name"]
-    
-    # ============================================================
+
+ # ============================================================
     # 8. CONDITIONAL VARIANCE INTERSECTION LOGIC
     # ============================================================
     # Evaluating structural compliance by performing precise array comparison
@@ -126,3 +126,4 @@ conformance_df.to_csv(OUTPUT_FILE, index=False)
 print(f"[✔] Conformance engine processing fully finalized.")
 print(f"[📊] Final Export Success. File persisted at: {OUTPUT_FILE}")
 print(conformance_df.head(5).to_string())
+   
