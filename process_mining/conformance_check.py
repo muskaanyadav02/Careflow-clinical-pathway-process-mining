@@ -110,3 +110,19 @@ for index, row in patient_paths.iterrows():
 print(f"[✔] Successfully processed and mapped all {len(conformance_records)} operational traces.")
 print("Preview of internal memory metrics buffer:")
 print(conformance_records[:3])
+
+# ============================================================
+# 10. DATAFRAME EXPORT & TARGET FILE PERSISTENCE (Today's New Task)
+# ============================================================
+print("\n[💾] Converting structural buffer memory logs to DataFrame...")
+conformance_df = pd.DataFrame(conformance_records)
+
+# Enforce dynamic parent directory verification before storage dump
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+# Exporting target analytics CSV for dashboard ingestion
+conformance_df.to_csv(OUTPUT_FILE, index=False)
+
+print(f"[✔] Conformance engine processing fully finalized.")
+print(f"[📊] Final Export Success. File persisted at: {OUTPUT_FILE}")
+print(conformance_df.head(5).to_string())
