@@ -98,3 +98,41 @@ The dataset is simulated. Time differences between activities are not necessaril
 The BigQuery table was manually verified using SQL queries. The checks confirmed that the required fields contain no missing values, no duplicate event records were returned, and no out-of-order timestamps were detected within individual cases.
 
 These results describe the current state of the BigQuery table and do not, by themselves, establish automated ingestion or continuous synchronization.
+
+## 10. Automated Test Results
+
+The automated test suite was run using:
+
+```powershell
+python -m pytest -q
+```
+
+Latest verified result: **21 tests passed** on the `integration/team-testing` branch. Rerun the command after subsequent integration changes to confirm the current status.
+
+## 11. Streamlit Backup Dashboard
+
+From the project root, launch the CareFlow analytics dashboard using:
+
+```powershell
+python -m streamlit run dashboard/app.py
+```
+
+The dashboard provides interactive views for event-log analysis, pathway exploration, bottleneck investigation, and data-quality results. It serves as a backup analytics interface for integration testing and review.
+
+## 12. Data Quality Report Interpretation
+
+The automated quality report summarizes the event log and evaluates whether it meets the defined data-quality rules.
+
+### Key Checks
+
+- **Missing values:** Identifies missing or blank values in required fields.
+- **Duplicate events:** Detects repeated event records based on the required event columns.
+- **Invalid timestamps:** Identifies timestamps that cannot be parsed correctly.
+- **Chronological violations:** Checks whether activities within a case follow timestamp order.
+- **Dataset summary:** Reports the total number of events, unique cases, and activity counts.
+
+### Overall Status
+
+The report provides an overall status based on the validation rules implemented in the pipeline. A failed status indicates that one or more configured checks did not pass and should be investigated before downstream analysis.
+
+The report supports data-quality monitoring but does not establish clinical correctness or prove that a patient pathway complies with an expected clinical process.
